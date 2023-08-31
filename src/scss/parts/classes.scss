@@ -1,2 +1,41 @@
-@import "parts/vars";
-@import "parts/classes";
+@import "vars";
+
+%button {
+    padding: 0.6rem 1.8rem;
+    border: 1px solid #fff;
+    font-size: 1rem;
+    position: relative;
+    transition: all ease 0.4s;
+    
+    & span {
+        z-index: 4;
+        position: relative;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        opacity: 0;
+
+        background-color: $yellow;
+        transition: all ease 0.4s;
+        pointer-events: none;
+        z-index: 3;
+    }
+
+    &:hover {
+        color: black;
+        border-color: transparent;
+
+        &::after {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+    }
+}

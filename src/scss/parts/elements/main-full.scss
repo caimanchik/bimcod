@@ -1,0 +1,14 @@
+@import "../vars";
+@import "../classes";
+
+
+.main-full {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    
+    &__wrapper {
+    }
+    &__content {
+    }
+}

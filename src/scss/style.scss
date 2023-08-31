@@ -1,5 +1,7 @@
 //* import shrifts and parts
 
+@import url('https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@500;600;700&family=Inter:wght@200;300;400;500&display=swap');
+
 @import "parts/nullstyle.scss";
 @import "parts/vars.scss";
 @import 'parts/classes.scss';
@@ -8,8 +10,12 @@
 
 .container{ 
 	margin: 0 auto; 
-	max-width: $mw + 24px;
-	padding: 0px 12px;
+	max-width: $mw;
+	width: 100%;
+	
+	@media(max-width: ($mw + 24px)) {
+		margin: 0 12px;
+	}
 	// @media(max-width:$md1){max-width: 970px;};
 	// @media(max-width:$md2){max-width: 750px;};
 	// @media(max-width:$md3){max-width: none; padding: 0px 15px;};
@@ -17,15 +23,15 @@
 
 html{
 	font-size: $fontsize;
-	@media(max-width:$md1){
+	@media(max-width:$md1) {
 		font-size: $fontsize - 1px;
 	}
 	
-	@media(max-width:$md2){
+	@media(max-width:$md2) {
 		font-size: $fontsize - 2px;
 	}
 	
-	@media(max-width:$md3){
+	@media(max-width:$md3) {
 		font-size: $fontsize - 3px;
 	}
 }
@@ -47,4 +53,4 @@ body{
 
 //* parts of scss
 
-
+@import 'parts/elements/header.scss';
