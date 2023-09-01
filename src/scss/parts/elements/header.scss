@@ -4,6 +4,7 @@
     top: 7px;
     transform: translateX(-50%);
     width: 100%;
+    z-index: 3;
 
     &__wrapper {
         height: 4rem;
@@ -84,5 +85,10 @@
         display: inline-block;
         font-size: 1rem;
         letter-spacing: 0.05em;
+        transition: all ease .3s;
+        
+        &:hover {
+            color: $yellow;
+        }
     }
 }

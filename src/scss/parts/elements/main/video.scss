@@ -1,0 +1,75 @@
+@import "./src/scss/parts/vars";
+@import "./src/scss/parts/classes";
+
+.video {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    
+    &__wrapper {
+        
+    }
+    
+    &__video {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right bottom;
+    }
+    
+    &__buttons {
+    }
+    
+    &__container {
+        height: 100%;
+    }
+}
+
+.video-buttons {
+    position: relative;
+    height: 100%;
+    
+    &__list {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: $bgcolor;
+        display: flex;
+        flex-direction: column;
+        padding: 1.3rem 1.8rem;
+        margin: -.85rem 0;
+    }
+    &__item {
+        padding: .85rem 0;
+    }
+    &__link {
+        position: relative;
+        height: 1.1rem;
+        width: 1.7rem;
+        display: block;
+        
+        & img {
+            position: absolute;
+            width: auto;
+            height: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all ease .3s;
+            
+            &:last-child {
+                opacity: 0;
+            }
+        }
+        
+        &:hover {
+            & img:last-child {
+                opacity: 1;
+            }
+        }
+    }
+}

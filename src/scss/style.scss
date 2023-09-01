@@ -41,14 +41,20 @@ body{
 	color: $color;
     background-color: $bgcolor;
 	
-	&.lock{
+	&.lock {
 		overflow: hidden;
 	}
 }
 
 .wrapper{
 	overflow: hidden;
-	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.main {
+	flex-grow: 1;
 }
 
 //* parts of scss

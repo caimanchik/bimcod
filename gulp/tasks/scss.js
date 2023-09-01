@@ -18,10 +18,11 @@ export const scss = () => {
                 message: 'Error: <%= message.title %>',
             })
         ))
-        .pipe(app.plugins.replace(/@img\//g, '../img/'))
+        // .pipe(app.plugins.replace(/@img\//g, '../img/'))
+        .pipe(app.plugins.replace(/@scss/g, './src/scss'))
         .pipe(sass({
             outputStyle: 'expanded'
-        }))
+        }).on("error", sass.logError))
         .pipe(
             app.plugins.if(
                 app.isBuild,

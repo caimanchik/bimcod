@@ -1,5 +1,57 @@
-.main-full {
+.video {
+  position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #fff;
+  overflow: hidden;
+}
+.video__video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right bottom;
+}
+.video__container {
+  height: 100%;
+}
+
+.video-buttons {
+  position: relative;
+  height: 100%;
+}
+.video-buttons__list {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #212121;
+  display: flex;
+  flex-direction: column;
+  padding: 1.3rem 1.8rem;
+  margin: -0.85rem 0;
+}
+.video-buttons__item {
+  padding: 0.85rem 0;
+}
+.video-buttons__link {
+  position: relative;
+  height: 1.1rem;
+  width: 1.7rem;
+  display: block;
+}
+.video-buttons__link img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all ease 0.3s;
+}
+.video-buttons__link img:last-child {
+  opacity: 0;
+}
+.video-buttons__link:hover img:last-child {
+  opacity: 1;
 }

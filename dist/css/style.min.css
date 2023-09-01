@@ -39,7 +39,7 @@ aside {
 
 html,
 body {
-  min-height: 100%;
+  min-height: 100vh;
   line-height: 1;
   font-size: 14px;
   -ms-text-size-adjust: 100%;
@@ -174,7 +174,13 @@ body.lock {
 
 .wrapper {
   overflow: hidden;
-  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .header {
@@ -183,6 +189,7 @@ body.lock {
   top: 7px;
   transform: translateX(-50%);
   width: 100%;
+  z-index: 3;
 }
 .header__wrapper {
   height: 4rem;
@@ -247,4 +254,8 @@ body.lock {
   display: inline-block;
   font-size: 1rem;
   letter-spacing: 0.05em;
+  transition: all ease 0.3s;
+}
+.header-links__link:hover {
+  color: #F3E14A;
 }
