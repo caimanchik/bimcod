@@ -1,3 +1,38 @@
+.projects-slider__button {
+  padding: 0.6rem 1.8rem;
+  border: 1px solid #fff;
+  font-size: 1rem;
+  position: relative;
+  transition: all ease 0.4s;
+}
+.projects-slider__button span {
+  z-index: 4;
+  position: relative;
+}
+.projects-slider__button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background-color: #F3E14A;
+  transition: all ease 0.4s;
+  pointer-events: none;
+  z-index: 3;
+}
+.projects-slider__button:hover {
+  color: black;
+  border-color: transparent;
+}
+.projects-slider__button:hover::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
 .benefits-list__number, .benefits-list__title, .benefits__title {
   font-family: "Anek Gurmukhi", sans-serif;
 }
@@ -62,6 +97,7 @@
   flex-direction: column;
   padding: 1.3rem 1.8rem;
   margin: -0.85rem 0;
+  background: rgba(26, 26, 26, 0.8);
 }
 .video-buttons__item {
   padding: 0.85rem 0;
@@ -85,6 +121,41 @@
   opacity: 0;
 }
 .video-buttons__link:hover img:last-child {
+  opacity: 1;
+}
+
+.projects-slider__button {
+  padding: 0.6rem 1.8rem;
+  border: 1px solid #fff;
+  font-size: 1rem;
+  position: relative;
+  transition: all ease 0.4s;
+}
+.projects-slider__button span {
+  z-index: 4;
+  position: relative;
+}
+.projects-slider__button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background-color: #F3E14A;
+  transition: all ease 0.4s;
+  pointer-events: none;
+  z-index: 3;
+}
+.projects-slider__button:hover {
+  color: black;
+  border-color: transparent;
+}
+.projects-slider__button:hover::after {
+  width: 100%;
+  height: 100%;
   opacity: 1;
 }
 
@@ -242,4 +313,192 @@
 }
 .benefits-list__text {
   margin-top: 1.1rem;
+  width: 27rem;
+}
+
+.projects-slider__button {
+  padding: 0.6rem 1.8rem;
+  border: 1px solid #fff;
+  font-size: 1rem;
+  position: relative;
+  transition: all ease 0.4s;
+}
+.projects-slider__button span {
+  z-index: 4;
+  position: relative;
+}
+.projects-slider__button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background-color: #F3E14A;
+  transition: all ease 0.4s;
+  pointer-events: none;
+  z-index: 3;
+}
+.projects-slider__button:hover {
+  color: black;
+  border-color: transparent;
+}
+.projects-slider__button:hover::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.benefits__title, .benefits-list__number, .benefits-list__title {
+  font-family: "Anek Gurmukhi", sans-serif;
+}
+
+.benefits__title {
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+
+.benefits-list__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.benefits-list__text {
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  font-family: "Inter", sans-serif;
+}
+
+.benefits-list__item {
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all ease 0.3s;
+}
+.appear.benefits-list__item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects {
+  background-color: #fff;
+  padding: 4rem 0 3.5rem;
+}
+.projects-slider__slider {
+  overflow: hidden;
+}
+.projects-slider__slides {
+  display: flex;
+  position: relative;
+  transition: all ease 0.3s;
+}
+.projects-slider__slide-wrap {
+  flex: 0 0 100%;
+}
+.projects-slider__img {
+  height: 24.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all ease 0.3s;
+  display: block;
+  cursor: pointer;
+}
+.projects-slider__img:hover {
+  transform: scale(0.99);
+}
+.projects-slider__img img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.projects-slider__button-wrap {
+  margin-top: 1.9rem;
+  display: flex;
+  justify-content: center;
+}
+.projects-slider__button {
+  border-color: #212121;
+}
+.projects-slider__button span {
+  color: #212121;
+}
+.projects-slider__button:hover {
+  color: #212121;
+}
+.projects-slider__controls {
+  margin-top: 2.7rem;
+  position: relative;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.projects-slider__arrow {
+  position: relative;
+  height: 100%;
+  flex-grow: 0;
+  cursor: pointer;
+}
+.projects-slider__arrow.next {
+  transform: rotate(180deg);
+}
+.projects-slider__arrow img {
+  width: fit-content;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all ease 0.2s;
+}
+.projects-slider__arrow img:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.projects-slider__arrow:hover img {
+  opacity: 0;
+}
+.projects-slider__arrow:hover img:nth-child(2) {
+  opacity: 1;
+}
+.projects-slider__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+.projects-slider__dot {
+  width: 0.72rem;
+  height: 0.72rem;
+  position: relative;
+  margin-left: 1.17rem;
+}
+.projects-slider__dot::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #212121;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.projects-slider__dot.active::after {
+  background-color: #F3E14A;
+}
+.projects-slider__dot:hover::after {
+  background-color: #cab60d;
+}
+.projects-slider__dot:first-child {
+  margin-left: 0;
 }

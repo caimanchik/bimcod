@@ -1,0 +1,156 @@
+@import "./src/scss/parts/vars";
+@import "./src/scss/parts/classes";
+
+.projects {
+    background-color: #fff;
+    padding: 4rem 0 3.5rem;
+    &__container {
+    }
+    &__wrapper {
+    }
+    &__slider {
+    }
+}
+.projects-slider {
+    &__slider {
+        overflow: hidden;
+    }
+    &__slides {
+        display: flex;
+        position: relative;
+        transition: all ease .3s;
+    }
+    &__slide-wrap {
+        flex: 0 0 100%;
+    }
+    &__slide {
+        // &:hover {
+        //     .projects-slider__img {
+        //         transform: scale(.99);
+        //     }
+        // }
+    }
+    &__img {
+        height: 24.5rem;
+        position: relative;
+        overflow: hidden;
+        transition: all ease 0.3s;
+        display: block;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(0.99);
+        }
+
+        & img {
+            position: absolute;
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+    }
+    &__button-wrap {
+        margin-top: 1.9rem;
+        display: flex;
+        justify-content: center;
+    }
+    &__button {
+        @extend %button;
+        & span {
+            color: $bgcolor;
+        }
+
+        &:hover {
+            color: $bgcolor;
+        }
+        border-color: $bgcolor;
+    }
+    &__controls {
+        margin-top: 2.7rem;
+        position: relative;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__arrow {
+        position: relative;
+        height: 100%;
+        flex-grow: 0;
+        cursor: pointer;
+        
+        &.next {
+            transform: rotate(180deg);
+        }
+        
+        & img {
+            width: fit-content;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transition: all ease .2s;
+            
+            &:nth-child(2) {
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0;
+            }
+        }
+        
+        &:hover {
+            & img {
+                opacity: 0;
+                
+                &:nth-child(2) {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        display: flex;
+    }
+    &__dot {
+        width: 0.72rem;
+        height: 0.72rem;
+        position: relative;
+        margin-left: 1.17rem;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $bgcolor;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all ease .3s;
+        }
+
+        &.active {
+            &::after {
+                background-color: $yellow;
+            }
+        }
+
+        &:hover {
+            &::after {
+                background-color: darken($yellow, 20%);
+            }
+        }
+        
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

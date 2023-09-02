@@ -11,13 +11,13 @@
     }
     &__container {
         height: 100%;
-        background-color: rgba(33, 33, 33, 0.8);
-        padding: 0 1.17rem;
     }
     &__columns {
         display: flex;
         align-items: center;
         height: 100%;
+        background-color: rgba(33, 33, 33, 0.8);
+        padding: 0 1.17rem;
     }
     &__column {
         flex-grow: 1;
