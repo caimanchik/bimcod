@@ -39,3 +39,38 @@
         }
     }
 }
+
+%anek {
+    font-family: $anek;
+}
+
+%title2 {
+    @extend %anek;
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+%title3 {
+    @extend %anek;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+%text20 {
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    font-family: $fontfamily;
+}
+
+%scroll {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all ease .3s;
+    
+    &.appear {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
