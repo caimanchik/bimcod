@@ -1,52 +1,55 @@
-<section class="form">
+<section class="form consult-form-wrap">
     <div class="form__container container">
         
         <div class="form__columns">
             <div class="form__column">
+                <h3 class="form__title">
+                    Получите персональную консультацию
+                </h3>
                 <form action="" class="form__form form-form">
                     
-                    <h2 class="form-form__title">
-                        Получите персональную консультацию
-                    </h2>
+                    <div class="form-form__field required">
+                        <input name="name" type="text" class="form-form__input" placeholder="ФИО">
+                    </div>
                     
-                    <div class="form-form__field">
-                        <input type="text" class="form-form__input required" placeholder="ФИО">
+                    <div class="form-form__field required">
+                        <input name="phone" type="tel" class="form-form__input" placeholder="+7 (999) 999-99-99">
+                    </div>
+                    
+                    <div class="form-form__field required">
+                        <input name="mail" type="email" class="form-form__input" placeholder="Email">
                     </div>
                     
                     <div class="form-form__field">
-                        <input type="tel" class="form-form__input required" placeholder="+7 (999) 999-99-99">
+                        <input name="company" type="text" class="form-form__input" placeholder="Название компании">
                     </div>
                     
-                    <div class="form-form__field">
-                        <input type="email" class="form-form__input required" placeholder="Email">
-                    </div>
-                    
-                    <div class="form-form__field">
-                        <input type="text" class="form-form__input" placeholder="Название компании">
-                    </div>
-                    
-                    <div class="form-form__field">
-                        <input type="text" class="form-form__input required" placeholder="Сообщение">
+                    <div class="form-form__field required">
+                        <textarea name="message" rows="1" type="" class="form-form__input form-form__input_textarea" placeholder="Сообщение"></textarea>
                     </div>
                     
                     <div class="form-form__button-wrap">
-                        <button class="form-form__button">
-                            Оставить заявку
+                        <button class="form-form__button button-submit">
+                            <span>Оставить заявку</span>
                         </button>
                     </div>
                     
                     <div class="form-form__politics">
-                        Нажимая на кнопку вы соглашаетесь с <a href="www.google.com">политикой конфиденциальности</a>
+                        Нажимая на кнопку, вы соглашаетесь с <a href="https://www.google.ru" target="_blank">политикой конфиденциальности</a>
                     </div>
                     
                 </form>
             </div>
             <div class="form__column">
-                <div class="form__rectangles form-rectangles">
+                <div class="form__rectangles form-rectangles" scroll>
                     <div class="form-rectangles__rectangle"></div>
                     <div class="form-rectangles__rectangle"></div>
                     <div class="form-rectangles__rectangle"></div>
                     <div class="form-rectangles__rectangle"></div>
+                </div>
+                
+                <div class="form__incorrect">
+                    
                 </div>
             </div>
         </div>

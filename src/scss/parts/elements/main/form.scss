@@ -1,0 +1,224 @@
+.form {
+    padding: 5.8rem 0 2.2rem;
+    background-color: $yellow;
+
+    &__container {
+    }
+    &__columns {
+        display: flex;
+    }
+    &__column {
+        &:first-child {
+            flex: 0 0 55%;
+            background-color: $bgcolor;
+            padding: 3rem 2.8rem 2.2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        &:last-child {
+            flex: 0 0 45%;
+            position: relative;
+        }
+    }
+    &__form {
+    }
+    &__rectangles {
+    }
+    &__title {
+        @extend %anek;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    &__incorrect {
+        position: absolute;
+        padding: 1.8rem 1.2rem;
+        left: 50%;
+        bottom: -10px;
+        z-index: 10;
+        background-color: #D44D4D;
+        white-space: nowrap;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all ease .3s;
+        font-size: 0.9rem;
+        font-weight: 400;
+        
+        & div {
+            margin-top: 0.5rem;
+            text-align: center;
+            
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        
+        &.visible {
+            opacity: 1;
+            bottom: 0;
+        }
+    }
+}
+
+.form-form {
+    margin-top: 1.8rem;
+
+    &__field {
+        margin-top: 1.7rem;
+        position: relative;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &.required {
+            &::after {
+                content: "*";
+                position: absolute;
+                left: 1px;
+                top: 0px;
+                color: $grey;
+            }
+        }
+    }
+    &__input {
+        width: 100%;
+        border-bottom: 1px solid white;
+        color: white;
+        padding: 0 0 1rem 0.67rem;
+        transition: all ease 0.3s;
+        font-size: 0.9rem;
+        font-weight: 500;
+
+        &::placeholder {
+            color: $grey;
+        }
+
+        &_textarea {
+            resize: none;
+            font-size: inherit;
+            overflow-y: hidden;
+            height: auto;
+            transition: all ease 0.3s;
+            
+            &:focus {
+                outline: none;
+            }
+        }
+        
+        &.wrong {
+            border-color: #EA0000;
+        }
+
+        &:focus,
+        &:active {
+            border-color: $yellow;
+        }
+    }
+    &__button-wrap {
+        margin-top: 2.9rem;
+    }
+    &__button {
+        @extend %button;
+        background-color: $yellow;
+        border: none;
+        color: black;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: none;
+            color: white;
+
+            &:after {
+                background-color: $bgcolor;
+                border: 1px solid white;
+            }
+        }
+    }
+    &__politics {
+        margin-top: 1.7rem;
+        font-size: 0.7rem;
+        font-weight: 300;
+        letter-spacing: 0.05em;
+
+        & a {
+            display: inline-block;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 0;
+                height: 1px;
+                background-color: $yellow;
+                transition: all ease 0.4s;
+                pointer-events: none;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 100%;
+                height: 1px;
+                background-color: #fff;
+                transition: all ease 0.4s;
+                pointer-events: none;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.form-rectangles {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &__rectangle {
+        position: absolute;
+        width: 19rem;
+        height: 19rem;
+        left: 10%;
+        top: -18%;
+        border: 1px solid black;
+        opacity: 0;
+        transition: opacity ease .3s, top ease .5s .3s;
+
+        transform: rotate(-45deg) skew(20deg, 20deg);
+        background-color: $yellow;
+    }
+
+    &.appear {
+        .form-rectangles__rectangle {
+            opacity: 1;
+            &:nth-child(4) {
+                top: -13%;
+            }
+
+            &:nth-child(3) {
+                top: 6%;
+            }
+
+            &:nth-child(2) {
+                top: 25%;
+            }
+
+            &:nth-child(1) {
+                top: 44%;
+            }
+        }
+    }
+}

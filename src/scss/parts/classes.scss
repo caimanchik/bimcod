@@ -6,6 +6,9 @@
     font-size: 1rem;
     position: relative;
     transition: all ease 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     & span {
         z-index: 4;
@@ -28,12 +31,12 @@
         z-index: 3;
     }
 
-    &:hover {
+    &:hover, &:focus, &:active {
         color: black;
         border-color: transparent;
 
         &::after {
-            width: 100%;
+            width: 101%;
             height: 100%;
             opacity: 1;
         }
