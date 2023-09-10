@@ -1,6 +1,6 @@
 .news {
     padding: 7rem 0 5rem;
-    
+
     &__container {
         margin-left: calc((100vw - 1100px) / 2);
         width: calc(1100px + calc((100vw - 1100px) / 2) - 1rem);
@@ -18,27 +18,26 @@
 .news-swiper {
     position: relative;
     &__wrapper {
-        
     }
     &__slide {
     }
-    
+
     &__navigation {
         margin-top: 5rem;
         display: flex;
     }
-    
+
     &__arrow {
         width: 5.7rem;
         height: 2.1rem;
         position: relative;
         cursor: pointer;
-        
+
         &_next {
             transform: rotate(180deg);
             margin-left: 1.5rem;
         }
-        
+
         & img {
             position: absolute;
             width: 100%;
@@ -46,14 +45,24 @@
             object-fit: contain;
             left: 0;
             top: 0;
-            transition: all ease .3s;
-            
+            transition: all ease 0.3s;
+
             &:last-child {
                 opacity: 0;
             }
         }
-        
-        &:hover {
+
+        @media (hover: hover) {
+            &:hover {
+                & img {
+                    &:last-child {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &:active {
             & img {
                 &:last-child {
                     opacity: 1;
@@ -64,9 +73,9 @@
 }
 
 .news-swiper-slide {
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
     padding: 1.4rem;
-    
+
     &__content {
     }
     &__title {
@@ -82,7 +91,7 @@
         margin-top: 1.5rem;
         display: block;
         background-color: #fff;
-        
+
         & img {
             position: absolute;
             width: 95%;
@@ -100,5 +109,13 @@
         @extend %button;
         color: $bgcolor;
         border-color: $bgcolor;
+
+        &:hover {
+            color: white;
+
+            &::after {
+                background-color: $bgcolor;
+            }
+        }
     }
 }
