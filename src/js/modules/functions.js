@@ -228,7 +228,7 @@ export class ConsultForm {
                 }
             }
             
-            if (errorsSet.length > 0){
+            if (errorsSet.size > 0) {
                 this.showError(errorsSet, wrongFileds)
             } else {
                 console.log(formValues)
@@ -304,3 +304,4 @@ export class ConsultForm {
         }, 5000);
     }
 }
+

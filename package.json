@@ -13,11 +13,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "del": "^6.1.1"
+    "css-loader": "^6.8.1",
+    "del": "^6.1.1",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "swiper": "^10.2.0"
   },
   "devDependencies": {
     "browser-sync": "latest",
-    "del":"^6.1.1",
+    "del": "^6.1.1",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",

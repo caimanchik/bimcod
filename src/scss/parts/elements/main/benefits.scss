@@ -21,6 +21,7 @@
 
     &__title {
         @extend %title2;
+        line-height: 1.2;
     }
 
     &__content {
@@ -169,6 +170,7 @@
     }
     &__title {
         @extend %title3;
+        line-height: 1.2;
     }
     &__text {
         @extend %text20;
