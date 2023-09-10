@@ -1,5 +1,6 @@
+.news-swiper-slide__button,
 .form-form__button,
-.projects-slider__button {
+.projects-swiper__button {
   padding: 0.6rem 1.8rem;
   border: 1px solid #fff;
   font-size: 1rem;
@@ -18,14 +19,16 @@
           justify-content: center;
 }
 
+.news-swiper-slide__button span,
 .form-form__button span,
-.projects-slider__button span {
+.projects-swiper__button span {
   z-index: 4;
   position: relative;
 }
 
+.news-swiper-slide__button::after,
 .form-form__button::after,
-.projects-slider__button::after {
+.projects-swiper__button::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -44,22 +47,28 @@
   z-index: 3;
 }
 
+.news-swiper-slide__button:hover,
 .form-form__button:hover,
-.projects-slider__button:hover,
+.projects-swiper__button:hover,
+.news-swiper-slide__button:focus,
 .form-form__button:focus,
-.projects-slider__button:focus,
+.projects-swiper__button:focus,
+.news-swiper-slide__button:active,
 .form-form__button:active,
-.projects-slider__button:active {
+.projects-swiper__button:active {
   color: black;
   border-color: transparent;
 }
 
+.news-swiper-slide__button:hover::after,
 .form-form__button:hover::after,
-.projects-slider__button:hover::after,
+.projects-swiper__button:hover::after,
+.news-swiper-slide__button:focus::after,
 .form-form__button:focus::after,
-.projects-slider__button:focus::after,
+.projects-swiper__button:focus::after,
+.news-swiper-slide__button:active::after,
 .form-form__button:active::after,
-.projects-slider__button:active::after {
+.projects-swiper__button:active::after {
   width: 101%;
   height: 100%;
   opacity: 1;
@@ -68,10 +77,12 @@
 .form__title,
 .benefits-list__number,
 .benefits-list__title,
+.news__title,
 .benefits__title {
   font-family: "Anek Gurmukhi", sans-serif;
 }
 
+.news__title,
 .benefits__title {
   font-weight: 600;
   font-size: 2.2rem;
@@ -185,8 +196,9 @@
   opacity: 1;
 }
 
+.news-swiper-slide__button,
 .form-form__button,
-.projects-slider__button {
+.projects-swiper__button {
   padding: 0.6rem 1.8rem;
   border: 1px solid #fff;
   font-size: 1rem;
@@ -205,14 +217,16 @@
           justify-content: center;
 }
 
+.news-swiper-slide__button span,
 .form-form__button span,
-.projects-slider__button span {
+.projects-swiper__button span {
   z-index: 4;
   position: relative;
 }
 
+.news-swiper-slide__button::after,
 .form-form__button::after,
-.projects-slider__button::after {
+.projects-swiper__button::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -231,22 +245,28 @@
   z-index: 3;
 }
 
+.news-swiper-slide__button:hover,
 .form-form__button:hover,
-.projects-slider__button:hover,
+.projects-swiper__button:hover,
+.news-swiper-slide__button:focus,
 .form-form__button:focus,
-.projects-slider__button:focus,
+.projects-swiper__button:focus,
+.news-swiper-slide__button:active,
 .form-form__button:active,
-.projects-slider__button:active {
+.projects-swiper__button:active {
   color: black;
   border-color: transparent;
 }
 
+.news-swiper-slide__button:hover::after,
 .form-form__button:hover::after,
-.projects-slider__button:hover::after,
+.projects-swiper__button:hover::after,
+.news-swiper-slide__button:focus::after,
 .form-form__button:focus::after,
-.projects-slider__button:focus::after,
+.projects-swiper__button:focus::after,
+.news-swiper-slide__button:active::after,
 .form-form__button:active::after,
-.projects-slider__button:active::after {
+.projects-swiper__button:active::after {
   width: 101%;
   height: 100%;
   opacity: 1;
@@ -254,11 +274,13 @@
 
 .form__title,
 .benefits-list__number,
+.news__title,
 .benefits__title,
 .benefits-list__title {
   font-family: "Anek Gurmukhi", sans-serif;
 }
 
+.news__title,
 .benefits__title {
   font-weight: 600;
   font-size: 2.2rem;
@@ -308,6 +330,10 @@
   width: 100%;
   background-color: #F3E14A;
   z-index: 2;
+}
+
+.benefits__title {
+  line-height: 1.2;
 }
 
 .benefits__content {
@@ -485,13 +511,18 @@
           transform: translate(calc(-100% - 1rem), 2.6rem);
 }
 
+.benefits-list__title {
+  line-height: 1.2;
+}
+
 .benefits-list__text {
   margin-top: 1.1rem;
   width: 27rem;
 }
 
+.news-swiper-slide__button,
 .form-form__button,
-.projects-slider__button {
+.projects-swiper__button {
   padding: 0.6rem 1.8rem;
   border: 1px solid #fff;
   font-size: 1rem;
@@ -510,14 +541,16 @@
           justify-content: center;
 }
 
+.news-swiper-slide__button span,
 .form-form__button span,
-.projects-slider__button span {
+.projects-swiper__button span {
   z-index: 4;
   position: relative;
 }
 
+.news-swiper-slide__button::after,
 .form-form__button::after,
-.projects-slider__button::after {
+.projects-swiper__button::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -536,34 +569,42 @@
   z-index: 3;
 }
 
+.news-swiper-slide__button:hover,
 .form-form__button:hover,
-.projects-slider__button:hover,
+.projects-swiper__button:hover,
+.news-swiper-slide__button:focus,
 .form-form__button:focus,
-.projects-slider__button:focus,
+.projects-swiper__button:focus,
+.news-swiper-slide__button:active,
 .form-form__button:active,
-.projects-slider__button:active {
+.projects-swiper__button:active {
   color: black;
   border-color: transparent;
 }
 
+.news-swiper-slide__button:hover::after,
 .form-form__button:hover::after,
-.projects-slider__button:hover::after,
+.projects-swiper__button:hover::after,
+.news-swiper-slide__button:focus::after,
 .form-form__button:focus::after,
-.projects-slider__button:focus::after,
+.projects-swiper__button:focus::after,
+.news-swiper-slide__button:active::after,
 .form-form__button:active::after,
-.projects-slider__button:active::after {
+.projects-swiper__button:active::after {
   width: 101%;
   height: 100%;
   opacity: 1;
 }
 
 .form__title,
+.news__title,
 .benefits__title,
 .benefits-list__number,
 .benefits-list__title {
   font-family: "Anek Gurmukhi", sans-serif;
 }
 
+.news__title,
 .benefits__title {
   font-weight: 600;
   font-size: 2.2rem;
@@ -602,29 +643,19 @@
 .projects {
   background-color: #fff;
   padding: 4rem 0 3.5rem;
-}
-
-.projects-slider__slider {
   overflow: hidden;
 }
 
-.projects-slider__slides {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.projects__container {
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.projects-swiper {
   position: relative;
-  -webkit-transition: all ease 0.3s;
-  -o-transition: all ease 0.3s;
-  transition: all ease 0.3s;
 }
 
-.projects-slider__slide-wrap {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-}
-
-.projects-slider__img {
+.projects-swiper__img {
   height: 24.5rem;
   position: relative;
   overflow: hidden;
@@ -635,13 +666,13 @@
   cursor: pointer;
 }
 
-.projects-slider__img:hover {
+.projects-swiper__img:hover {
   -webkit-transform: scale(0.99);
       -ms-transform: scale(0.99);
           transform: scale(0.99);
 }
 
-.projects-slider__img img {
+.projects-swiper__img img {
   position: absolute;
   width: auto;
   height: 100%;
@@ -654,7 +685,101 @@
           transform: translateX(-50%);
 }
 
-.projects-slider__button-wrap {
+.projects-swiper__pagination {
+  top: auto !important;
+  bottom: 0 !important;
+  top: auto !important;
+  -webkit-transform: translateY(50%) !important;
+      -ms-transform: translateY(50%) !important;
+          transform: translateY(50%) !important;
+  text-align: left !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2 !important;
+}
+
+.projects-swiper .swiper-pagination-bullet {
+  width: 0.72rem;
+  height: 0.72rem;
+  margin-right: 1.15rem !important;
+  background: #212121 !important;
+  opacity: 1 !important;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.projects-swiper .swiper-pagination-bullet-active {
+  background-color: #F3E14A !important;
+}
+
+.projects-swiper .swiper-pagination-bullet:hover {
+  background-color: #cab60d !important;
+}
+
+.projects-swiper .swiper-pagination-bullet:last-child {
+  margin-right: 0 !important;
+}
+
+.projects-swiper__arrow {
+  position: absolute;
+  height: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  cursor: pointer;
+  bottom: 0 !important;
+  top: auto !important;
+  left: 1rem !important;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  z-index: 2 !important;
+}
+
+.projects-swiper__arrow_next {
+  -webkit-transform: translateY(50%) rotate(180deg);
+      -ms-transform: translateY(50%) rotate(180deg);
+          transform: translateY(50%) rotate(180deg);
+  right: 1rem !important;
+  left: auto !important;
+}
+
+.projects-swiper__arrow img {
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  position: absolute;
+  width: 5rem;
+}
+
+.projects-swiper__arrow img:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.projects-swiper__arrow:active img {
+  opacity: 0;
+}
+
+.projects-swiper__arrow:active img:nth-child(2) {
+  opacity: 1;
+}
+
+.projects-swiper__arrow:after {
+  display: none;
+}
+
+.projects-swiper__button-wrap {
   margin-top: 1.9rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -662,123 +787,20 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 2.2rem;
 }
 
-.projects-slider__button {
+.projects-swiper__button {
+  display: inline-block;
   border-color: #212121;
 }
 
-.projects-slider__button span {
+.projects-swiper__button span {
   color: #212121;
 }
 
-.projects-slider__button:hover {
+.projects-swiper__button:hover {
   color: #212121;
-}
-
-.projects-slider__controls {
-  margin-top: 2.7rem;
-  position: relative;
-  height: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.projects-slider__arrow {
-  position: relative;
-  height: 100%;
-  -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  cursor: pointer;
-}
-
-.projects-slider__arrow.next {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.projects-slider__arrow img {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  left: 0;
-  top: 0;
-  -webkit-transition: all ease 0.2s;
-  -o-transition: all ease 0.2s;
-  transition: all ease 0.2s;
-}
-
-.projects-slider__arrow img:nth-child(2) {
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-
-.projects-slider__arrow:hover img {
-  opacity: 0;
-}
-
-.projects-slider__arrow:hover img:nth-child(2) {
-  opacity: 1;
-}
-
-.projects-slider__dots {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  display: flex;
-}
-
-.projects-slider__dot {
-  width: 0.72rem;
-  height: 0.72rem;
-  position: relative;
-  margin-left: 1.17rem;
-}
-
-.projects-slider__dot::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #212121;
-  border-radius: 50%;
-  cursor: pointer;
-  -webkit-transition: all ease 0.3s;
-  -o-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-}
-
-.projects-slider__dot.active::after {
-  background-color: #F3E14A;
-}
-
-.projects-slider__dot:hover::after {
-  background-color: #cab60d;
-}
-
-.projects-slider__dot:first-child {
-  margin-left: 0;
 }
 
 .form {
@@ -1034,4 +1056,118 @@
 
 .form-rectangles.appear .form-rectangles__rectangle:nth-child(1) {
   top: 44%;
+}
+
+.news {
+  padding: 7rem 0 5rem;
+}
+
+.news__container {
+  margin-left: calc((100vw - 1100px) / 2);
+  width: calc(1100px + (100vw - 1100px) / 2 - 1rem);
+  overflow: hidden;
+  max-width: 1300px;
+}
+
+.news__swiper {
+  margin-top: 3.4rem;
+}
+
+.news-swiper {
+  position: relative;
+}
+
+.news-swiper__navigation {
+  margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.news-swiper__arrow {
+  width: 5.7rem;
+  height: 2.1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.news-swiper__arrow_next {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-left: 1.5rem;
+}
+
+.news-swiper__arrow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  left: 0;
+  top: 0;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.news-swiper__arrow img:last-child {
+  opacity: 0;
+}
+
+.news-swiper__arrow:hover img:last-child {
+  opacity: 1;
+}
+
+.news-swiper-slide {
+  background-color: #D9D9D9;
+  padding: 1.4rem;
+}
+
+.news-swiper-slide__title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  color: #212121;
+}
+
+.news-swiper-slide__img {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  margin-top: 1.5rem;
+  display: block;
+  background-color: #fff;
+}
+
+.news-swiper-slide__img img {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.news-swiper-slide__button-wrap {
+  margin-top: 1rem;
+}
+
+.news-swiper-slide__button {
+  color: #212121;
+  border-color: #212121;
+}
+
+@media (hover: hover) {
+  .projects-swiper__arrow:hover img {
+    opacity: 0;
+  }
+
+  .projects-swiper__arrow:hover img:nth-child(2) {
+    opacity: 1;
+  }
 }
