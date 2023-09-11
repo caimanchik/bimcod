@@ -99,6 +99,7 @@ h6 {
   font-weight: 400;
 }
 
+.main-page .header__button,
 .header__button {
   padding: 0.6rem 1.8rem;
   border: 1px solid #fff;
@@ -118,11 +119,13 @@ h6 {
           justify-content: center;
 }
 
+.main-page .header__button span,
 .header__button span {
   z-index: 4;
   position: relative;
 }
 
+.main-page .header__button::after,
 .header__button::after {
   content: "";
   position: absolute;
@@ -222,7 +225,7 @@ body.lock {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  background-color: rgba(33, 33, 33, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   padding: 0 1.17rem;
 }
 
@@ -248,6 +251,19 @@ body.lock {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+.header__button {
+  color: #212121;
+  border-color: #212121;
+}
+
+.header__button:hover {
+  color: white;
+}
+
+.header__button:hover::after {
+  background-color: #212121;
 }
 
 .header-logos {
@@ -289,6 +305,14 @@ body.lock {
   -webkit-transform: translateY(5px);
       -ms-transform: translateY(5px);
           transform: translateY(5px);
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  color: #212121;
+}
+
+.header-logos:hover .header-logos__text {
+  color: #786c08;
 }
 
 .header-links {
@@ -312,9 +336,50 @@ body.lock {
   -webkit-transition: all ease 0.3s;
   -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
+  color: #212121;
+}
+
+.header-links__link:visited {
+  color: #212121;
 }
 
 .header-links__link:hover {
+  color: #827509;
+}
+
+.main-page .header__columns {
+  background-color: rgba(33, 33, 33, 0.8);
+}
+
+.main-page .header__button {
+  color: white;
+}
+
+.main-page .header__button:hover {
+  color: #212121;
+}
+
+.main-page .header__button:hover::after {
+  background-color: #F3E14A;
+}
+
+.main-page .header-links__link {
+  color: white;
+}
+
+.main-page .header-links__link:visited {
+  color: white;
+}
+
+.main-page .header-links__link:hover {
+  color: #F3E14A;
+}
+
+.main-page .header-logos__text {
+  color: white;
+}
+
+.main-page .header-logos:hover .header-logos__text {
   color: #F3E14A;
 }
 
