@@ -16,7 +16,7 @@
         display: flex;
         align-items: center;
         height: 100%;
-        background-color: rgba(33, 33, 33, 0.8);
+        background: rgba(255, 255, 255, 0.8);
         padding: 0 1.17rem;
     }
     &__column {
@@ -25,7 +25,7 @@
         &:nth-child(2) {
             flex-grow: 0;
         }
-        
+
         &:last-child {
             display: flex;
             align-items: center;
@@ -40,6 +40,17 @@
     }
     &__button {
         @extend %button;
+        
+        color: $bgcolor;
+        border-color: $bgcolor;
+        
+        &:hover {
+            color: white;
+            
+            &::after {
+                background-color: $bgcolor;
+            }
+        }
     }
 }
 
@@ -48,12 +59,12 @@
     align-items: center;
     height: 100%;
     width: fit-content;
-    
+
     &__logo {
         position: relative;
         width: 2.1rem;
         height: 2.8rem;
-        
+
         & img {
             position: absolute;
             width: 100%;
@@ -63,7 +74,7 @@
             top: 0;
         }
     }
-    
+
     &__text {
         padding-left: 1.15rem;
         font-family: $anek;
@@ -72,6 +83,14 @@
         font-weight: 600;
         position: relative;
         transform: translateY(5px);
+        transition: all ease 0.3s;
+        color: $bgcolor;
+    }
+
+    &:hover {
+        .header-logos__text {
+            color: darken($yellow, 37%);
+        }
     }
 }
 
@@ -79,7 +98,7 @@
     display: flex;
     align-items: center;
     margin: 0 -1.4rem;
-    
+
     &__item {
         padding: 0 1.4rem;
     }
@@ -87,10 +106,64 @@
         display: inline-block;
         font-size: 1rem;
         letter-spacing: 0.05em;
-        transition: all ease .3s;
-        
+        transition: all ease 0.3s;
+        color: $bgcolor;
+
+        &:visited {
+            color: $bgcolor;
+        }
+
         &:hover {
-            color: $yellow;
+            color: darken($yellow, 35%);
+        }
+    }
+}
+
+.main-page {
+    .header {
+        &__columns {
+            background-color: rgba(33, 33, 33, 0.8);
+        }
+        
+        &__button {
+            @extend %button;
+            color: white;
+            
+            &:hover {
+            color: $bgcolor;
+            
+            &::after {
+                background-color: $yellow;
+            }
+        }
+        }
+    }
+
+    .header-links {
+        &__item {
+        }
+
+        &__link {
+            color: white;
+
+            &:visited {
+                color: white;
+            }
+
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+
+    .header-logos {
+        &__text {
+            color: white;
+        }
+        &:hover {
+            .header-logos__text {
+                color: $yellow;
+            }
         }
     }
 }

@@ -188,89 +188,65 @@
         }
     }
     &__pagination {
-        top: auto !important;
-        bottom: 0 !important;
-        top: auto !important;
-        transform: translateY(50%) !important;
-        text-align: left !important;
+        bottom: 0;
+        transform: translateY(50%);
         display: flex;
         justify-content: center;
-        z-index: 2 !important;
+        z-index: 2;
     }
 
     .swiper-pagination-bullet {
         width: 0.72rem;
         height: 0.72rem;
-        // position: relative;
-        margin-right: 1.15rem !important;
-        background: $bgcolor !important;
-        opacity: 1 !important;
+        margin-right: 1.15rem;
+        background: $bgcolor;
+        opacity: 1;
         transition: all ease 0.3s;
-
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     left: 0;
-        //     top: 0;
-        //     width: 100%;
-        //     height: 100%;
-        //     background-color: $bgcolor !important;
-        //     border-radius: 50%;
-        //     cursor: pointer;
-        //     transition: all ease 0.3s;
-        // }
-
-        &-active {
-            background-color: $yellow !important;
-            // &::after {
-            //     background-color: $yellow !important;
-            // }
-        }
+        border-radius: 50%;
+        cursor: pointer;
 
         &:hover {
-            background-color: darken($yellow, 20%) !important;
-            // &::after {
-            //     background-color: darken($yellow, 20%);
-            // }
+            background-color: darken($yellow, 20%);
+        }
+
+        &-active {
+            background-color: $yellow;
+
+            &:hover {
+                background-color: $yellow;
+            }
         }
 
         &:last-child {
-            margin-right: 0 !important;
+            margin-right: 0;
         }
-
-        // &:first-child {
-        //     margin-left: 0 !important;
-        // }
     }
     &__arrow {
         position: absolute;
         height: 100%;
         flex-grow: 0;
         cursor: pointer;
-        bottom: 0 !important;
-        top: auto !important;
-        left: 1rem !important;
+        bottom: 0;
+        left: 1rem;
         transform: translateY(50%);
-        z-index: 2 !important;
+        z-index: 2;
 
         &_next {
             transform: translateY(50%) rotate(180deg);
-            right: 1rem !important;
-            left: auto !important;
+            right: 1rem;
+            left: auto;
         }
 
         & img {
-            height: 100%;
+            height: auto;
             left: 0;
-            top: 0;
-            transition: all ease 0.3s;
+            top: 50%;
+            transition: all ease .4s;
             position: absolute;
             width: 5rem;
+            transform: translateY(-50%);
 
             &:nth-child(2) {
-                position: absolute;
-                left: 0;
-                top: 0;
                 opacity: 0;
             }
         }

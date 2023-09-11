@@ -47,6 +47,12 @@
     font-family: $anek;
 }
 
+%title1 {
+    @extend %anek;
+    font-weight: 600;
+    font-size: 2.8rem;
+}
+
 %title2 {
     @extend %anek;
     font-weight: 600;

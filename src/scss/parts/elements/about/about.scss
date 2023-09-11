@@ -1,0 +1,130 @@
+.about {
+    padding: 8.8rem 0 2.5rem;
+    background-color: $yellow;
+    color: $bgcolor;
+
+    &__container {
+    }
+    &__content {
+        @extend %scroll;
+    }
+    &__title {
+        @extend %title1;
+    }
+    &__text {
+        margin-top: 1rem;
+        padding-right: 2rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.28em;
+    }
+    &__swiper-container {
+        margin-left: calc(calc(100vw - $mw) / 2);
+        max-width: calc(calc(100vw - $mw) / 2 + $mw);
+        width: calc($mw + 3rem);
+        overflow: hidden;
+        @extend %scroll;
+    }
+}
+
+.highlight {
+    display: inline-block;
+    position: relative;
+    color: $yellow;
+
+    & span {
+        position: relative;
+        z-index: 2;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: -1%;
+        top: 0px;
+        width: 0;
+        height: 100%;
+        background-color: $bgcolor;
+        transition: all ease 0.6s 0.2s;
+    }
+}
+
+.appear {
+    .highlight {
+        &::after {
+            width: 102%;
+        }
+    }
+}
+
+.about-swiper {
+    margin-top: 2rem;
+    &__wrapper {
+    }
+    &__slide {
+    }
+    &__img {
+        width: 100%;
+        padding-top: 56%;
+        position: relative;
+
+        & img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            left: 0;
+            top: 0;
+        }
+    }
+    
+    &__navigation {
+        margin-top: 5rem;
+        display: flex;
+    }
+
+    &__arrow {
+        width: 5.7rem;
+        height: 2.1rem;
+        position: relative;
+        cursor: pointer;
+
+        &_next {
+            transform: rotate(180deg);
+            margin-left: 1.5rem;
+        }
+
+        & img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            left: 0;
+            top: 0;
+            transition: all ease 0.4s;
+
+            &:last-child {
+                opacity: 0;
+            }
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                & img {
+                    opacity: 0;
+                    &:last-child {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &:active {
+            & img {
+                &:last-child {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

@@ -4,8 +4,6 @@ import { Swiper } from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 handleTextareaHeight(document.querySelector('.form-form'))
 
@@ -13,7 +11,7 @@ const consultForm = new ConsultForm(document.querySelector('.consult-form-wrap')
 
 const projectsSwiper = new Swiper(".projects-swiper", {
     // autoplay: {
-    //     delay: 100
+    //     delay: 1000,
     // },
     simulateTouch: false,
     slidesPerView: 1,
