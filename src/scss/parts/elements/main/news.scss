@@ -9,6 +9,7 @@
     }
     &__title {
         @extend %title2;
+        @extend %scroll;
     }
     &__swiper {
         margin-top: 3.4rem;

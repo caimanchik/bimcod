@@ -1,5 +1,6 @@
 import { ConsultForm } from './modules/functions.js';
 import { handleTextareaHeight } from './modules/functions.js';
+
 import { Swiper } from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
@@ -10,9 +11,6 @@ handleTextareaHeight(document.querySelector('.form-form'))
 const consultForm = new ConsultForm(document.querySelector('.consult-form-wrap'))
 
 const projectsSwiper = new Swiper(".projects-swiper", {
-    // autoplay: {
-    //     delay: 1000,
-    // },
     simulateTouch: false,
     slidesPerView: 1,
     modules: [

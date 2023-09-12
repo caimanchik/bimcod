@@ -31,6 +31,9 @@
             align-items: center;
             justify-content: flex-end;
         }
+        
+        @extend %scroll;
+        transform: none;
     }
     &__logos {
     }

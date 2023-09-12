@@ -1,5 +1,6 @@
 @import "./src/scss/parts/vars";
 @import "./src/scss/parts/classes";
+@import "rectangles";
 
 .benefits {
     position: relative;
@@ -21,6 +22,7 @@
 
     &__title {
         @extend %title2;
+        @extend %scroll;
         line-height: 1.2;
     }
 
@@ -35,120 +37,6 @@
     }
 
     &__list {
-    }
-
-    &__rectangles {
-        position: absolute;
-
-        &_first {
-            right: 0;
-            top: 0;
-            width: 375px;
-            height: 375px;
-        }
-
-        &_second {
-            left: 0;
-            bottom: 0;
-            width: 1255px;
-            height: 1255px;
-        }
-
-        &.appear .benefits__rectangle {
-            opacity: 1;
-            $skew: skew(-35deg, 0);
-            &_first {
-                &:nth-child(1) {
-                    transform: translate(15%, -65%) $skew;
-                }
-
-                &:nth-child(2) {
-                    transform: translate(90%, -85%) $skew;
-                }
-
-                &:nth-child(3) {
-                    transform: translate(70%, -45%) $skew;
-                }
-
-                &:nth-child(4) {
-                    transform: translate(72%, -40%) $skew;
-                }
-            }
-
-            &_second {
-                $skew: skew(-35deg, 0);
-
-                &:nth-child(1) {
-                    transform: translate(-100%, 68%) $skew;
-                }
-
-                &:nth-child(2) {
-                    transform: translate(-105%, 57%) $skew;
-                }
-
-                &:nth-child(3) {
-                    transform: translate(-115%, 62%) $skew;
-                }
-
-                &:nth-child(4) {
-                    transform: translate(-120%, 48%) $skew;
-                }
-            }
-        }
-    }
-
-    &__rectangle {
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        transition: all ease 0.5s;
-
-        &_first {
-            width: 375px;
-            height: 375px;
-            border: 1px solid white;
-            $skew: skew(-35deg, 0);
-
-            &:nth-child(1) {
-                transform: translate(30%, -80%) $skew;
-            }
-
-            &:nth-child(2) {
-                transform: translate(100%, -90%) $skew;
-            }
-
-            &:nth-child(3) {
-                transform: translate(75%, -60%) $skew;
-            }
-
-            &:nth-child(4) {
-                transform: translate(80%, -45%) $skew;
-            }
-        }
-
-        &_second {
-            width: 1255px;
-            height: 1255px;
-            border: 1px solid white;
-            $skew: skew(-35deg, 0);
-
-            &:nth-child(1) {
-                transform: translate(-110%, 80%) $skew;
-            }
-
-            &:nth-child(2) {
-                transform: translate(-120%, 60%) $skew;
-            }
-
-            &:nth-child(3) {
-                transform: translate(-118%, 70%) $skew;
-            }
-
-            &:nth-child(4) {
-                transform: translate(-130%, 55%) $skew;
-            }
-        }
     }
 }
 

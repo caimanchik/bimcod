@@ -29,6 +29,7 @@
         @extend %anek;
         font-size: 1.5rem;
         font-weight: 600;
+        margin-bottom: 1.8rem;
     }
     
     &__incorrect {
@@ -62,7 +63,7 @@
 }
 
 .form-form {
-    margin-top: 1.8rem;
+    @extend %scroll;
 
     &__field {
         margin-top: 1.7rem;
