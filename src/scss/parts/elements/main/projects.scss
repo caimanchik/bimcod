@@ -8,6 +8,8 @@
     &__container {
         padding-bottom: 1rem;
         overflow: hidden;
+        @extend %scroll;
+        transform: none;
     }
     &__wrapper {
     }
@@ -241,7 +243,7 @@
             height: auto;
             left: 0;
             top: 50%;
-            transition: all ease .4s;
+            transition: all ease 0.4s;
             position: absolute;
             width: 5rem;
             transform: translateY(-50%);

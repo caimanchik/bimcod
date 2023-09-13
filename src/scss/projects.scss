@@ -7,6 +7,7 @@
     }
     &__title {
         @extend %title1;
+        @extend %scroll;
     }
     &__wrapper {
         padding: 0 4rem;
@@ -18,50 +19,90 @@
         margin-top: 4.3rem;
         display: flex;
         justify-content: center;
+        @extend %scroll;
     }
     &__button {
         @extend %button;
     }
 }
 .projects-projects {
-    display: flex;
-    flex-wrap: wrap;
     margin: -0.83rem;
-
     &__project {
         flex: 0 0 33.333%;
         padding: 0.83rem;
     }
-}
-.projects-project {
-    position: relative;
 
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        width: 100%;
-        height: 100%;
-        border-radius: 341px;
-        background: radial-gradient(50% 50% at 50% 50%, rgba(243, 225, 74, 0.67) 0%, rgba(255, 255, 255, 0) 100%);
-        filter: blur(33.5px);
-        z-index: -1;
-        opacity: 0;
-        transition: all ease .3s;
+    &__part {
+        display: flex;
+        flex-wrap: wrap;
+        
+        position: relative;
     }
     
-    &:hover {
-        &::after {
-            opacity: 1;
+    &__loader {
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        left: 50%;
+        top: 50px;
+        transform: translateX(-50%);
+        transition: all ease .4s;
+        
+        & img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            left: 0;
+            top: 0;
         }
+        
+        &.hidden {
+            opacity: 0;
+        }
+    }
+}
+.projects-project {
+    &__wrapper {
+        width: 100%;
+        padding-top: 100%;
+        position: relative;
     }
 
     &__content {
-        position: relative;
-        display: block;
+        position: absolute;
         width: 100%;
-        padding-top: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: block;
+        opacity: 0;
+        transition: all ease .3s;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -7.5%;
+            top: -7.5%;
+            width: 115%;
+            height: 116%;
+            border-radius: 341px;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(243, 225, 74, 0.67) 0%, rgba(255, 255, 255, 0) 100%);
+            filter: blur(33.5px);
+            z-index: -1;
+            opacity: 0;
+            transition: all ease 0.5s;
+        }
+
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+        }
+        
+        &.visible {
+            opacity: 1;
+        }
     }
     &__title {
         position: absolute;
@@ -88,9 +129,9 @@
             object-fit: cover;
             left: 0;
             top: 0;
-            transition: all ease .3s;
+            transition: all ease 0.3s;
         }
-        
+
         &:hover {
             & img {
                 transform: scale(1.02);
