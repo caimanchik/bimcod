@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230911232409">
-    <link rel="stylesheet" href="css/main.min.css?_v=20230911232409">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230913212055">
+    <link rel="stylesheet" href="css/main.min.css?_v=20230913212055">
     <title>BIMCOD</title>
 </head>
 
@@ -16,8 +16,8 @@
         <div class="header__container container">
             <div class="header__columns">
                 
-                <div class="header__column">
-                    <a href="/" class="header__logos header-logos">
+                <div class="header__column" scroll="0.5">
+                    <a href="index.html" class="header__logos header-logos">
                         <div class="header-logos__logo">
                             <img src="img/icons/logo.svg" alt="Логотип">
                         </div>
@@ -27,11 +27,11 @@
                     </a>
                 </div>
                 
-                <div class="header__column">
+                <div class="header__column" scroll="0.5">
                     <nav class="header__nav">
                         <ul class="header__links header-links">
                             <li class="header-links__item">
-                                <a href="#" class="header-links__link">
+                                <a href="projects.html" class="header-links__link">
                                     Проекты
                                 </a>
                             </li>
@@ -59,7 +59,7 @@
                     </nav>
                 </div>
                 
-                <div class="header__column">
+                <div class="header__column" scroll="0.5">
                     <button class="header__button">
                         <span>Оставить заявку</span>
                     </button>
@@ -114,29 +114,29 @@
 </div>
             <section class="benefits">
     <div class="benefits__line"></div>
-    <div class="benefits__rectangles benefits__rectangles_first" scroll="0.5">
-        <div class="benefits__rectangle benefits__rectangle_first"></div>
-        <div class="benefits__rectangle benefits__rectangle_first"></div>
-        <div class="benefits__rectangle benefits__rectangle_first"></div>
-        <div class="benefits__rectangle benefits__rectangle_first"></div>
-    </div>
-    <div class="benefits__rectangles benefits__rectangles_second" scroll="0.5">
-        <div class="benefits__rectangle benefits__rectangle_second"></div>
-        <div class="benefits__rectangle benefits__rectangle_second"></div>
-        <div class="benefits__rectangle benefits__rectangle_second"></div>
-        <div class="benefits__rectangle benefits__rectangle_second"></div>
-    </div>
+    <div class="rectangles__rectangles rectangles__rectangles_first" scroll="1">
+    <div class="rectangles__rectangle rectangles__rectangle_first"></div>
+    <div class="rectangles__rectangle rectangles__rectangle_first"></div>
+    <div class="rectangles__rectangle rectangles__rectangle_first"></div>
+    <div class="rectangles__rectangle rectangles__rectangle_first"></div>
+</div>
+<div class="rectangles__rectangles rectangles__rectangles_second" scroll="0.5">
+    <div class="rectangles__rectangle rectangles__rectangle_second"></div>
+    <div class="rectangles__rectangle rectangles__rectangle_second"></div>
+    <div class="rectangles__rectangle rectangles__rectangle_second"></div>
+    <div class="rectangles__rectangle rectangles__rectangle_second"></div>
+</div>
     
     <div class="benefits__container container">
         
-        <h2 class="benefits__title">
+        <h2 class="benefits__title" scroll="1">
             Наши <br> преимущества
         </h2>
         
         <div class="benefits__content">
             <div class="benefits__column">
                 <ul class="benefits__list benefits-list">
-                    <li class="benefits-list__item" scroll>
+                    <li class="benefits-list__item" scroll="1">
                         <div class="benefits-list__number">
                             01
                         </div>
@@ -147,7 +147,7 @@
                             Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий.
                         </div>
                     </li>
-                    <li class="benefits-list__item" scroll>
+                    <li class="benefits-list__item" scroll="1">
                         <div class="benefits-list__number">
                             02
                         </div>
@@ -158,7 +158,8 @@
                             Комплексные решения, объединяющие проектирование и инженерные изыскания, что позволяет клиентам получить все необходимые услуги в одном месте и сократить время и затраты на координацию различных специалистов.
                         </div>
                     </li>
-                    <li class="benefits-list__item" scroll>
+                    <li class="benefits-list__item" scroll="0.9">
+                        
                         <div class="benefits-list__number">
                             03
                         </div>
@@ -176,7 +177,7 @@
     </div>
 </section>
             <section class="projects">
-    <div class="projects__container container">
+    <div class="projects__container container" scroll>
         
         <div class="projects__wrapper">
             
@@ -238,10 +239,12 @@
         
         <div class="form__columns">
             <div class="form__column">
-                <h3 class="form__title">
-                    Получите персональную консультацию
-                </h3>
-                <form action="" class="form__form form-form">
+                
+                <form action="" class="form__form form-form" scroll="0.7">
+                    
+                    <h3 class="form__title">
+                        Получите персональную консультацию
+                    </h3>
                     
                     <div class="form-form__field required">
                         <input name="name" type="text" class="form-form__input" placeholder="ФИО">
@@ -276,7 +279,7 @@
                 </form>
             </div>
             <div class="form__column">
-                <div class="form__rectangles form-rectangles" scroll>
+                <div class="form__rectangles form-rectangles" scroll="0.7">
                     <div class="form-rectangles__rectangle"></div>
                     <div class="form-rectangles__rectangle"></div>
                     <div class="form-rectangles__rectangle"></div>
@@ -295,7 +298,7 @@
     
     <div class="news__container container">
         
-        <h2 class="news__title">
+        <h2 class="news__title" scroll="1">
             Новости
         </h2>
         
@@ -483,8 +486,8 @@
 </footer>
     </div>
 
-    <script src="js/app.min.js?_v=20230911232409"></script>
-    <script src="js/main.min.js?_v=20230911232409"></script>
+    <script src="js/app.min.js?_v=20230913212055"></script>
+    <script src="js/main.min.js?_v=20230913212055"></script>
 </body>
 
 </html>
