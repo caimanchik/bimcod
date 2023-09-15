@@ -146,14 +146,12 @@ h6 {
 }
 
 .header__button:hover,
-.header__button:focus,
 .header__button:active {
   color: black;
   border-color: transparent;
 }
 
 .header__button:hover::after,
-.header__button:focus::after,
 .header__button:active::after {
   width: 101%;
   height: 100%;
@@ -277,6 +275,10 @@ body.lock {
 .header__button {
   color: #212121;
   border-color: #212121;
+}
+
+.header__button::after {
+  background-color: #212121;
 }
 
 .header__button:hover {

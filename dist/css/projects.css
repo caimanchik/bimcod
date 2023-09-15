@@ -42,14 +42,12 @@
 }
 
 .projects__button:hover,
-.projects__button:focus,
 .projects__button:active {
   color: black;
   border-color: transparent;
 }
 
 .projects__button:hover::after,
-.projects__button:focus::after,
 .projects__button:active::after {
   width: 101%;
   height: 100%;
