@@ -2,5 +2,4 @@
 **.fig
 **.code-workspace
 **.DS_Store
-**/gulpfile.js
 gulp/version.json

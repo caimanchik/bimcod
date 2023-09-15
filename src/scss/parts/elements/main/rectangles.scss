@@ -17,44 +17,47 @@
             height: 1255px;
         }
 
-        &.appear .rectangles__rectangle {
-            opacity: 1;
-            $skew: skew(-35deg, 0);
-            &_first {
-                &:nth-child(1) {
-                    transform: translate(15%, -65%) $skew;
-                }
-
-                &:nth-child(2) {
-                    transform: translate(90%, -85%) $skew;
-                }
-
-                &:nth-child(3) {
-                    transform: translate(70%, -45%) $skew;
-                }
-
-                &:nth-child(4) {
-                    transform: translate(72%, -40%) $skew;
-                }
-            }
-
-            &_second {
+        &.appear {
+            opacity: 1 !important;
+            .rectangles__rectangle {
+                opacity: 1;
                 $skew: skew(-35deg, 0);
+                &_first {
+                    &:nth-child(1) {
+                        transform: translate(15%, -65%) $skew;
+                    }
 
-                &:nth-child(1) {
-                    transform: translate(-100%, 68%) $skew;
+                    &:nth-child(2) {
+                        transform: translate(90%, -85%) $skew;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translate(70%, -45%) $skew;
+                    }
+
+                    &:nth-child(4) {
+                        transform: translate(72%, -40%) $skew;
+                    }
                 }
 
-                &:nth-child(2) {
-                    transform: translate(-105%, 57%) $skew;
-                }
+                &_second {
+                    $skew: skew(-35deg, 0);
 
-                &:nth-child(3) {
-                    transform: translate(-115%, 62%) $skew;
-                }
+                    &:nth-child(1) {
+                        transform: translate(-100%, 68%) $skew;
+                    }
 
-                &:nth-child(4) {
-                    transform: translate(-120%, 48%) $skew;
+                    &:nth-child(2) {
+                        transform: translate(-105%, 57%) $skew;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translate(-115%, 62%) $skew;
+                    }
+
+                    &:nth-child(4) {
+                        transform: translate(-120%, 48%) $skew;
+                    }
                 }
             }
         }

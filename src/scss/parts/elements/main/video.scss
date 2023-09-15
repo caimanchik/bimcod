@@ -33,16 +33,24 @@
     position: relative;
     height: 100%;
     
-    &__list {
+    &__wrapper {
         position: absolute;
         right: 0;
         bottom: 0;
-        background-color: $bgcolor;
+        background: rgba(26, 26, 26, 0.80);
+        padding: 1.3rem 1.8rem;
+    }
+    
+    &__list {
         display: flex;
         flex-direction: column;
-        padding: 1.3rem 1.8rem;
         margin: -.85rem 0;
-        background: rgba(26, 26, 26, 0.80);
+        opacity: 0;
+        transition: all ease .3s;
+        
+        &.appear {
+            opacity: 1;
+        }
     }
     &__item {
         padding: .85rem 0;

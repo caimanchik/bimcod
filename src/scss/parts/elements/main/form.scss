@@ -31,30 +31,30 @@
         font-weight: 600;
         margin-bottom: 1.8rem;
     }
-    
+
     &__incorrect {
         position: absolute;
         padding: 1.8rem 1.2rem;
         left: 50%;
         bottom: -10px;
         z-index: 10;
-        background-color: #D44D4D;
+        background-color: #d44d4d;
         white-space: nowrap;
         transform: translateX(-50%);
         opacity: 0;
-        transition: all ease .3s;
+        transition: all ease 0.3s;
         font-size: 0.9rem;
         font-weight: 400;
-        
+
         & div {
             margin-top: 0.5rem;
             text-align: center;
-            
+
             &:first-child {
                 margin-top: 0;
             }
         }
-        
+
         &.visible {
             opacity: 1;
             bottom: 0;
@@ -102,14 +102,14 @@
             overflow-y: hidden;
             height: auto;
             transition: all ease 0.3s;
-            
+
             &:focus {
                 outline: none;
             }
         }
-        
+
         &.wrong {
-            border-color: #EA0000;
+            border-color: #ea0000;
         }
 
         &:focus,
@@ -135,6 +135,9 @@
             &:after {
                 background-color: $bgcolor;
                 border: 1px solid white;
+                width: 101%;
+                height: 100%;
+                opacity: 1;
             }
         }
     }
@@ -196,7 +199,9 @@
         top: -18%;
         border: 1px solid black;
         opacity: 0;
-        transition: opacity ease .3s, top ease .5s .3s;
+        transition:
+            opacity ease 0.3s,
+            top ease 0.5s 0.3s;
 
         transform: rotate(-45deg) skew(20deg, 20deg);
         background-color: $yellow;
