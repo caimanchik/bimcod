@@ -1,0 +1,174 @@
+@import "./src/scss/parts/vars";
+@import "./src/scss/parts/classes";
+@import "@scss/parts/elements/main/rectangles";
+
+.project {
+    position: relative;
+    &__container {
+        padding: 10.6rem 0 5.5rem;
+    }
+    &__wrapper {
+    }
+    &__title {
+        @extend %title1;
+    }
+    &__swiper-container {
+        padding: 0 3.4rem;
+        overflow: hidden;
+    }
+    &__swiper {
+        width: 100%;
+    }
+    &__content {
+    }
+    &__subtitle {
+        @extend %title3;
+
+        margin-top: 6.1rem;
+    }
+    &__decription {
+        margin-top: 2.2rem;
+        @extend %text20;
+    }
+}
+
+.project-swiper {
+    margin-top: 3.7rem;
+
+    &__wrapper {
+    }
+
+    &__slide {
+    }
+
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 6.5rem;
+    }
+
+    &__arrow {
+        width: 5.7rem;
+        height: 2.1rem;
+        position: relative;
+        cursor: pointer;
+
+        &_next {
+            transform: rotate(180deg);
+        }
+
+        & img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transition: all ease 0.3s;
+
+            &:last-child {
+                opacity: 0;
+                transition: all ease 0.3s;
+            }
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                & img {
+                    opacity: 0;
+                    transition: all ease 0.3s 0.1s;
+                    &:last-child {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        
+        &:active {
+            & img {
+                opacity: 0;
+                transition: all ease .3s .1s;
+                &:last-child {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        align-items: center;
+    }
+
+    &__bullet {
+        width: 0.72rem;
+        height: 13px;
+        display: inline-block;
+        cursor: pointer;
+
+        margin-right: 1.17rem;
+
+        position: relative;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 50%;
+            transition: all ease 0.3s;
+        }
+
+        &:hover {
+            &::after {
+                background-color: darken($yellow, 20%);
+            }
+        }
+
+        &_active {
+            &::after {
+                background-color: $yellow;
+            }
+
+            &:hover {
+                &::after {
+                    background-color: $yellow;
+                }
+            }
+        }
+    }
+}
+
+.project-swiper-slide {
+    &__content {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+    }
+    &__image {
+        position: relative;
+        width: 100%;
+        padding-top: 60%;
+
+        & img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
+.rectangles__rectangles_second {
+    transform: translateY(38%);
+    left: -50px;
+}

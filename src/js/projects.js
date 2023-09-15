@@ -18,7 +18,7 @@ async function getProjectsData(page) {
             resolve(Array(6).fill({
                 title: 'Детский сад',
                 imageUrl: 'img/projects/1.jpg',
-                link: '#'
+                link: 'project.html'
             }))
         }, 1000);
     })

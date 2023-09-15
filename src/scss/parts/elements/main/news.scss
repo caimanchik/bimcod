@@ -101,12 +101,12 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            transition: all ease .3s;
+            transition: all ease 0.3s;
         }
-        
+
         &:hover {
             & img {
-                transform: translate(-50%, -50%) scale(.99);
+                transform: translate(-50%, -50%) scale(0.99);
             }
         }
     }
@@ -117,6 +117,10 @@
         @extend %button;
         color: $bgcolor;
         border-color: $bgcolor;
+
+        &::after {
+            background-color: $bgcolor;
+        }
 
         &:hover {
             color: white;

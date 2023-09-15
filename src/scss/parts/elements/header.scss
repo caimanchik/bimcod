@@ -47,6 +47,10 @@
         color: $bgcolor;
         border-color: $bgcolor;
         
+        &::after {
+            background-color: $bgcolor;
+        }
+        
         &:hover {
             color: white;
             
