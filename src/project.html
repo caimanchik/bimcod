@@ -16,17 +16,30 @@
                 
                 <div class="project__container container">
                     
-                    <div class="project__wrapper">
+                    <div id="project-loader" class="project__loader">
+                        <img src="@img/icons/loader.svg" alt="">
+                    </div>
+                    
+                    <div id="project-wrapper" class="project__wrapper" style="opacity: 0;">
                         
                         <h1 id="project-title" class="project__title">
-                            Название проекта
+                            Заглушка
                         </h1>
                         
                         <div class="project__swiper-container">
                             
                             <div class="project__swiper project-swiper">
                                 
-                                <div class="swiper-wrapper project-swiper__wrapper">
+                                <div id="project-swiper-wrapper" class="swiper-wrapper project-swiper__wrapper">
+                                    <template id="slide-template">
+                                        <div class="swiper-slide project-swiper__slide project-swiper-slide">
+                                            <div class="project-swiper-slide__content">
+                                                <div class="project-swiper-slide__image">
+                                                    <img src="@img/main/slide1.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
                                     
                                     <div class="swiper-slide project-swiper__slide project-swiper-slide">
                                         <div class="project-swiper-slide__content">
@@ -35,39 +48,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    <div class="swiper-slide project-swiper__slide project-swiper-slide">
-                                        <div class="project-swiper-slide__content">
-                                            <div class="project-swiper-slide__image">
-                                                <img src="@img/main/slide1.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="swiper-slide project-swiper__slide project-swiper-slide">
-                                        <div class="project-swiper-slide__content">
-                                            <div class="project-swiper-slide__image">
-                                                <img src="@img/main/slide1.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="swiper-slide project-swiper__slide project-swiper-slide">
-                                        <div class="project-swiper-slide__content">
-                                            <div class="project-swiper-slide__image">
-                                                <img src="@img/main/slide1.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="swiper-slide project-swiper__slide project-swiper-slide">
-                                        <div class="project-swiper-slide__content">
-                                            <div class="project-swiper-slide__image">
-                                                <img src="@img/main/slide1.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
                                 </div>
                                 
                                 <div class="project-swiper__navigation">
@@ -93,14 +73,8 @@
                                     Описание
                                 </h2>
                             
-                                <div class="project__decription">
-                                    Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень
-                                    профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области
-                                    проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных
-                                    изысканий. Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень
-                                    профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области
-                                    проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных
-                                    изысканий.
+                                <div id="project-description" class="project__decription">
+                                    Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий.
                                 </div>
                             
                             </div>
