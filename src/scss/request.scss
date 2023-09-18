@@ -1,0 +1,15 @@
+@import "./src/scss/parts/vars";
+@import "./src/scss/parts/classes";
+
+@import "@scss/parts/elements/main/form";
+
+.main {
+    display: flex;
+}
+
+.form {
+    flex-grow: 1;
+    padding: 9.3rem 0 2.2rem;
+    display: flex;
+    align-items: center;
+}
