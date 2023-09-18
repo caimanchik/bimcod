@@ -252,6 +252,9 @@ body.lock {
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
+  -webkit-transition: opacity ease 0.3s;
+  -o-transition: opacity ease 0.3s;
+  transition: opacity ease 0.3s;
 }
 
 .header__column:nth-child(2) {
@@ -281,7 +284,15 @@ body.lock {
   background-color: #212121;
 }
 
+.header__button:visited {
+  color: #212121;
+}
+
 .header__button:hover {
+  color: white;
+}
+
+.header__button:hover:visited {
   color: white;
 }
 

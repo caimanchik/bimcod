@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230915174844">
-    <link rel="stylesheet" href="css/project.min.css?_v=20230915174844">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230918230250">
+    <link rel="stylesheet" href="css/project.min.css?_v=20230918230250">
     <title>BIMCOD</title>
 </head>
 
@@ -60,9 +60,9 @@
                 </div>
                 
                 <div class="header__column" scroll="0.5">
-                    <button class="header__button">
+                    <a href="request.html" class="header__button">
                         <span>Оставить заявку</span>
-                    </button>
+                    </a>
                 </div>
                 
             </div>
@@ -88,17 +88,30 @@
                 
                 <div class="project__container container">
                     
-                    <div class="project__wrapper">
+                    <div id="project-loader" class="project__loader">
+                        <img src="img/icons/loader.svg" alt="">
+                    </div>
+                    
+                    <div id="project-wrapper" class="project__wrapper" style="opacity: 0;">
                         
                         <h1 id="project-title" class="project__title">
-                            Название проекта
+                            Заглушка
                         </h1>
                         
                         <div class="project__swiper-container">
                             
                             <div class="project__swiper project-swiper">
                                 
-                                <div class="swiper-wrapper project-swiper__wrapper">
+                                <div id="project-swiper-wrapper" class="swiper-wrapper project-swiper__wrapper">
+                                    <template id="slide-template">
+                                        <div class="swiper-slide project-swiper__slide project-swiper-slide">
+                                            <div class="project-swiper-slide__content">
+                                                <div class="project-swiper-slide__image">
+                                                    <picture><source srcset="img/main/slide1.webp" type="image/webp"><img src="img/main/slide1.jpg" alt=""></picture>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
                                     
                                     <div class="swiper-slide project-swiper__slide project-swiper-slide">
                                         <div class="project-swiper-slide__content">
@@ -107,39 +120,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    <div class="swiper-slide project-swiper__slide project-swiper-slide">
-                                        <div class="project-swiper-slide__content">
-                                            <div class="project-swiper-slide__image">
-                                                <picture><source srcset="img/main/slide1.webp" type="image/webp"><img src="img/main/slide1.jpg" alt=""></picture>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="swiper-slide project-swiper__slide project-swiper-slide">
-                                        <div class="project-swiper-slide__content">
-                                            <div class="project-swiper-slide__image">
-                                                <picture><source srcset="img/main/slide1.webp" type="image/webp"><img src="img/main/slide1.jpg" alt=""></picture>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="swiper-slide project-swiper__slide project-swiper-slide">
-                                        <div class="project-swiper-slide__content">
-                                            <div class="project-swiper-slide__image">
-                                                <picture><source srcset="img/main/slide1.webp" type="image/webp"><img src="img/main/slide1.jpg" alt=""></picture>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="swiper-slide project-swiper__slide project-swiper-slide">
-                                        <div class="project-swiper-slide__content">
-                                            <div class="project-swiper-slide__image">
-                                                <picture><source srcset="img/main/slide1.webp" type="image/webp"><img src="img/main/slide1.jpg" alt=""></picture>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
                                 </div>
                                 
                                 <div class="project-swiper__navigation">
@@ -165,14 +145,8 @@
                                     Описание
                                 </h2>
                             
-                                <div class="project__decription">
-                                    Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень
-                                    профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области
-                                    проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных
-                                    изысканий. Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень
-                                    профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области
-                                    проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных
-                                    изысканий.
+                                <div id="project-description" class="project__decription">
+                                    Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий.
                                 </div>
                             
                             </div>
@@ -260,8 +234,8 @@
 </footer>
     </div>
 
-    <script src="js/app.min.js?_v=20230915174844"></script>
-    <script src="js/project.min.js?_v=20230915174844"></script>
+    <script src="js/app.min.js?_v=20230918230250"></script>
+    <script src="js/project.min.js?_v=20230918230250"></script>
 </body>
 
 </html>

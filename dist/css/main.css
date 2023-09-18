@@ -537,6 +537,7 @@
 .benefits-list__text {
   margin-top: 1.1rem;
   width: 27rem;
+  line-height: 1.2em;
 }
 
 .news-swiper-slide__button,
@@ -884,7 +885,6 @@
 
 .form__incorrect div {
   margin-top: 0.5rem;
-  text-align: center;
 }
 
 .form__incorrect div:first-child {
