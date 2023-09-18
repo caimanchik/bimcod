@@ -34,6 +34,7 @@
         
         @extend %scroll;
         transform: none;
+        transition: opacity ease .3s;
     }
     &__logos {
     }
@@ -51,8 +52,15 @@
             background-color: $bgcolor;
         }
         
+        &:visited {
+            color: $bgcolor;
+        }
+        
         &:hover {
             color: white;
+            &:visited {
+                color: white;
+            }
             
             &::after {
                 background-color: $bgcolor;
