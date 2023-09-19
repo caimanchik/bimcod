@@ -81,3 +81,17 @@ export function scrollTo(element, event) {
     )
 }
 
+export function widthToHeightProportion(context = document) {
+    const elements = context.querySelectorAll('[proportion]');
+    
+    elements.forEach(element => {
+        let proportion = element.getAttribute('proportion')
+        proportion = proportion === '' ? 1 : +proportion
+        
+        element.style.width = element.getBoundingClientRect().height * proportion + 'px'
+        console.log(element.style.width)
+        console.log(element.getBoundingClientRect().height)
+    });
+    
+    elements.forEach(e => console.log(e.getBoundingClientRect().width))
+}

@@ -1,4 +1,5 @@
-import { isWebp, initScrollAppear } from "./modules/functions.js"
+import { isWebp, initScrollAppear, widthToHeightProportion } from "./modules/functions.js"
 
 isWebp()
 initScrollAppear()
+widthToHeightProportion()

@@ -1,0 +1,100 @@
+@import "./src/scss/parts/vars";
+@import "./src/scss/parts/classes";
+
+@import "@scss/parts/elements/main/rectangles";
+
+
+.news {
+    position: relative;
+    &__container {
+        padding: 8.7rem 0 7.4rem;
+    }
+    &__wrapper {
+    }
+    &__title {
+        @extend %title1;
+        @extend %scroll;
+    }
+    &__news {
+        margin-top: 4.8rem;
+    }
+}
+
+.news-news {
+    &__container {
+        padding: 0 4rem;
+    }
+    &__section {
+        
+    }
+    &__subsection {
+    }
+    &__item {
+    }
+    &__button-wrap {
+        margin-top: 9.4rem;
+        display: flex;
+        justify-content: center;
+        @extend %scroll;
+    }
+    
+    &__button {
+        @extend %button;
+    }
+}
+
+.news-news-item {
+    display: flex;
+    margin: 0 -2rem;
+    margin-top: 2.2rem;
+    
+    &:last-child {
+        flex-direction: row-reverse;
+    }
+    
+    &__column {
+        padding: 0 2rem;
+        
+        &:nth-child(2) {
+            flex-grow: 1;
+        }
+    }
+    
+    &__image {
+        min-height: 16.7rem;
+        height: 100%;
+        width: 16.7rem;
+        position: relative;
+        
+        & img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            left: 0;
+            top: 0;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        padding: 2rem 0 4px;
+    }
+    &__title {
+        @extend %title3;
+    }
+    &__text {
+        @extend %text20;
+        margin-top: 1.7rem;
+        line-height: 1.2em;
+    }
+}
+
+.rectangles__rectangles {
+    &_second {
+        transform: translateY(34%);
+    }
+}
+
