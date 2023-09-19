@@ -1,10 +1,11 @@
-import { ConsultForm } from './modules/functions.js';
-import { handleTextareaHeight } from './modules/functions.js';
+import { ConsultForm } from './modules/classes/consultForm.js';
+import { handleTextareaHeight, scrollTo } from './modules/functions.js';
 
 import { Swiper } from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
+
 
 handleTextareaHeight(document.querySelector('.form-form'))
 
@@ -43,4 +44,8 @@ const newsSwiper = new Swiper(".news-swiper", {
     rewind: true,
     spaceBetween: 30,
     preventClicks: true
+})
+
+document.querySelector('#leave-request').addEventListener('click', (e) => {
+    scrollTo(document.querySelector('.form'), e)
 })

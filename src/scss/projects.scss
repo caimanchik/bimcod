@@ -1,8 +1,11 @@
 @import "./src/scss/parts/vars";
 @import "./src/scss/parts/classes";
 
+@import "@scss/parts/elements/main/rectangles";
+
 .projects {
     padding: 8rem 0 6.1rem;
+    position: relative;
     &__container {
     }
     &__title {
@@ -137,5 +140,11 @@
                 transform: scale(1.02);
             }
         }
+    }
+}
+
+.rectangles__rectangles {
+    &_second {
+        transform: translateY(38%);
     }
 }

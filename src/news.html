@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+@@include('html/head.html', {
+    "title": "BIMCOD",
+    "style": "news"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/header.html', {})
+
+        <main class="main">
+            <section class="news">
+                
+                @@include('html/main/rectangles.html', {})
+                
+                <div class="news__container container">
+                    
+                    <div class="news__wrapper">
+                        
+                        <h1 class="news__title" scroll>
+                            Новости
+                        </h1>
+                        
+                        <div class="news__news news-news">
+                            
+                            <ul class="news-news__container">
+                                <li class="news-news__section">
+                                    <ul class="news-news__subsection">
+                                        <li class="news-news__item news-news-item">
+                                            <div class="news-news-item__column">
+                                                <div class="news-news-item__image">
+                                                    <img src="@img/projects/1.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="news-news-item__column">
+                                                <div class="news-news-item__content">
+                                                    <h2 class="news-news-item__title">
+                                                        Проектирование детского сайта
+                                                    </h2>
+                                                    <div class="news-news-item__text">
+                                                        Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="news-news__item news-news-item">
+                                            <div class="news-news-item__column">
+                                                <div class="news-news-item__image">
+                                                    <img src="@img/projects/1.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="news-news-item__column">
+                                                <div class="news-news-item__content">
+                                                    <h2 class="news-news-item__title">
+                                                        Проектирование детского сайта
+                                                    </h2>
+                                                    <div class="news-news-item__text">
+                                                        Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень
+                                                        профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в
+                                                        области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования
+                                                        и инженерных изысканий.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                            <div class="news-news__button-wrap" scroll>
+                                <button class="news-news__button">
+                                    <span>Показать еще</span>
+                                </button>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </section>
+        </main>
+
+        @@include('html/footer.html', {})
+    </div>
+
+    <script src="js/app.min.js"></script>
+    <script src="js/news.min.js"></script>
+</body>
+
+</html>

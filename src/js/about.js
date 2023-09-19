@@ -3,6 +3,7 @@ import { Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 
+
 const newsSwiper = new Swiper(".about-swiper", {
     simulateTouch: false,
     slidesPerView: 4,
