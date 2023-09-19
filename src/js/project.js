@@ -3,6 +3,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 
+
 initProject()
 
 async function initProject() {
@@ -11,7 +12,6 @@ async function initProject() {
     insertProject(projectData)
     
     document.querySelector('#project-wrapper').classList.add('visible')
-    
 }
 
 function insertProject(projectData) {
