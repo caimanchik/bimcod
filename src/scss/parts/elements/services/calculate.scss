@@ -1,0 +1,151 @@
+.calculate {
+    background-color: $yellow;
+    height: 100%;
+    padding: 8.9rem 0 0;
+
+    &__container {
+    }
+    &__wrapper {
+        background-color: $bgcolor;
+        padding: 5.5rem 4rem 3.6rem;
+        position: relative;
+        overflow: hidden;
+    }
+    &__content {
+        transition: all ease 0.3s;
+        &.appear {
+            opacity: 1 !important;
+        }
+    }
+    &__title {
+        @extend %title1;
+        font-size: 2.2rem;
+        max-width: 25rem;
+    }
+    &__subtitle {
+        font-size: 1.3rem;
+        font-weight: 400;
+        max-width: 20rem;
+        margin-top: 2.2rem;
+    }
+    &__button-wrap {
+        margin-top: 4rem;
+    }
+    &__button {
+        @extend %button;
+        background-color: $yellow;
+        border: none;
+        color: $bgcolor;
+
+        &::after {
+            background-color: $bgcolor;
+            border: 1px solid white;
+        }
+
+        &:hover {
+            background-color: $bgcolor;
+            border-color: white;
+            color: white;
+        }
+    }
+    &__rectangles {
+    }
+}
+.calculate-decor {
+    position: absolute;
+    width: 25%;
+    right: 50px;
+    top: 10px;
+    transform: translateX(-50%);
+    transition: all ease 0.3s;
+
+    &__rectangle {
+        width: 100%;
+        padding-top: 100%;
+        border: 1px solid white;
+        left: 0;
+        position: absolute;
+        background-color: $bgcolor;
+        transition: all ease 0.5s 0.3s;
+        top: 0;
+
+        transform: rotate(-45deg) skew(20deg, 20deg);
+    }
+    &__coin {
+    }
+
+    &.appear {
+        opacity: 1 !important;
+        .calculate-decor {
+            &__rectangle {
+                &:nth-child(4) {
+                    top: 0;
+                }
+                &:nth-child(3) {
+                    top: 80px;
+                }
+                &:nth-child(2) {
+                    top: 160px;
+                }
+                &:nth-child(1) {
+                    top: 240px;
+                }
+            }
+        }
+
+        .calculate-decor-coin {
+            &__coin {
+                animation: coin 1s cubic-bezier(.32,-2.54,.66,.55) .3s;
+                top: 0;
+                left: 0;
+                width: 70px;
+                height: 70px;
+                background: $yellow;
+            }
+        }
+    }
+}
+.calculate-decor-coin {
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translateX(calc(-50%));
+
+    &__coin {
+        position: absolute;
+        background-color: $yellow;
+        border-radius: 50%;
+        transform: translateX(-50%);
+        top: -20px;
+        transition: left ease 1s, width ease .7s, height ease .7s, background ease 1s;
+        transition-delay: .3s;
+        left: -150px;
+        
+        width: 30px;
+        height: 30px;
+        border: 1px solid $yellow;
+        background: $bgcolor;
+        
+        // width: 70px;
+        //         height: 70px;
+    }
+    &__pocket {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 55px;
+        background-color: $bgcolor;
+        transform: translateX(-50%);
+        border-top: 1px solid white;
+    }
+}
+
+@keyframes coin {
+    from {
+        top: -20px;
+    }
+
+    to {
+        top: 0;
+    }
+}

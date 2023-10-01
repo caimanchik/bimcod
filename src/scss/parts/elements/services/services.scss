@@ -1,0 +1,45 @@
+.services {
+    background-color: $yellow;
+    padding: 4.7rem 0 8rem;
+    &__container {
+    }
+    &__wrapper {
+    }
+    &__content {
+    }
+    &__title {
+        @extend %title2;
+        color: $bgcolor;
+        transition: all ease .3s;
+        
+        &.appear {
+            opacity: 1 !important;
+        }
+    }
+    &__list {
+        padding: 0 5.3rem;
+        margin-top: 4rem;
+    }
+    &__item {
+        @extend %scroll;
+        color: $bgcolor;
+        margin-bottom: 3.4rem;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.services-item {
+    display: flex;
+    align-items: center;
+    &__number {
+        flex: 0 0 6.8rem;
+        font-size: 4.4rem;
+    }
+    &__text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.7rem;
+    }
+}
