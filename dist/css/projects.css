@@ -77,7 +77,7 @@
 
 .appear.projects__button-wrap,
 .appear.projects__title {
-  opacity: 1;
+  opacity: 1 !important;
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
