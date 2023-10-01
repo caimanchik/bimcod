@@ -18,6 +18,7 @@ export const js = () => {
                 project: './src/js/project.js',
                 request: './src/js/request.js',
                 news: './src/js/news.js',
+                services: './src/js/services.js',
             },
             output: {
                 filename: '[name].min.js'
