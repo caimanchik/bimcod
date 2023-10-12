@@ -10,6 +10,91 @@
         padding: 5.5rem 4rem 3.6rem;
         position: relative;
         overflow: hidden;
+
+        & .calculate-step-decor {
+            transition: all ease 0.5s;
+            &__prev {
+                position: absolute;
+                left: 1.4rem;
+                top: 1.4rem;
+                width: 3.5rem;
+                height: 1.3rem;
+                cursor: pointer;
+                z-index: 2;
+                // transition: all ease .5s;
+
+                & img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                    left: 0;
+                    top: 0;
+                    transition: all ease 0.3s;
+
+                    &:last-child {
+                        opacity: 0;
+                    }
+                }
+
+                &:hover {
+                    & img {
+                        &:last-child {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            &__rectangles {
+                position: absolute;
+                width: 23rem;
+                height: 23rem;
+                top: 0;
+                right: 0;
+                z-index: 3;
+            }
+
+            &__rectangle {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #5f5f5f;
+                // transform: skew(-35deg, 0);
+                $skew: skew(-35deg, 0);
+                &:nth-child(1) {
+                    transform: translate(5%, -90%) $skew;
+                }
+                &:nth-child(2) {
+                    transform: translate(30%, -65%) $skew;
+                }
+                &:nth-child(3) {
+                    transform: translate(33%, -25%) $skew;
+                }
+                &:nth-child(4) {
+                    transform: translate(40%, -10%) $skew;
+                }
+            }
+        }
+
+        &.calculator {
+            padding: 0;
+            margin-bottom: 4.7rem;
+
+            & .calculate-step-decor {
+                opacity: 1 !important;
+            }
+        }
+
+        &.result {
+            & .calculate-step-decor {
+                &__prev {
+                    opacity: 0;
+                }
+            }
+        }
     }
     &__content {
         transition: all ease 0.3s;
@@ -95,7 +180,7 @@
 
         .calculate-decor-coin {
             &__coin {
-                animation: coin 1s cubic-bezier(.32,-2.54,.66,.55) .3s;
+                animation: coin 1s cubic-bezier(0.32, -2.54, 0.66, 0.55) 0.3s;
                 top: 0;
                 left: 0;
                 width: 70px;
@@ -117,15 +202,19 @@
         border-radius: 50%;
         transform: translateX(-50%);
         top: -20px;
-        transition: left ease 1s, width ease .7s, height ease .7s, background ease 1s;
-        transition-delay: .3s;
+        transition:
+            left ease 1s,
+            width ease 0.7s,
+            height ease 0.7s,
+            background ease 1s;
+        transition-delay: 0.3s;
         left: -150px;
-        
+
         width: 30px;
         height: 30px;
         border: 1px solid $yellow;
         background: $bgcolor;
-        
+
         // width: 70px;
         //         height: 70px;
     }
@@ -147,5 +236,244 @@
 
     to {
         top: 0;
+    }
+}
+
+.main {
+    background-color: $yellow;
+}
+
+.calculate {
+    &__step {
+    }
+}
+
+.calculate-step {
+    min-height: 22rem;
+    display: flex;
+    padding: 4.5rem 4rem 1.5rem;
+
+    position: relative;
+
+    &__wrapper {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        @extend %title1;
+        font-size: 2.2rem;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    &__inputs {
+        margin-top: 2.8rem;
+        flex-grow: 1;
+    }
+    &__input {
+    }
+    &__input-text {
+        position: relative;
+        display: block;
+        top: -1rem;
+
+        width: 7.5rem;
+        border: 1px solid white;
+        padding: 0.55rem;
+        text-align: center;
+
+        color: white;
+        font-size: 1.3rem;
+
+        transition: all ease 0.3s;
+
+        &:focus {
+            border-color: $yellow;
+        }
+
+        &.warning {
+            border: 1px solid red;
+        }
+    }
+    &__button-wrap {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10rem;
+    }
+    &__button {
+        @extend %button;
+        padding: 0.7rem 3.4rem;
+
+        &:focus {
+            color: black;
+            border-color: transparent;
+
+            &::after {
+                width: 101%;
+                height: 100%;
+                opacity: 1;
+            }
+        }
+    }
+    &__step {
+        position: absolute;
+        font-size: 256px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.3);
+
+        bottom: 0;
+        left: 0;
+
+        pointer-events: none;
+
+        transform: translateY(40%);
+
+        & span {
+            position: relative;
+            top: -20px;
+        }
+    }
+
+    &__input-wrap {
+        margin-top: 0.7rem;
+
+        &-checkbox {
+            margin-top: 1rem;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &__input-radio {
+        display: none;
+
+        &:checked + .calculate-step__label-radio:after {
+            opacity: 1;
+        }
+
+        &.warning + .calculate-step__label-radio:before {
+            border: 2px solid red;
+        }
+    }
+
+    &__input-checkbox {
+        display: none;
+
+        &:checked + .calculate-step__label-checkbox img {
+            opacity: 1;
+        }
+
+        &.warning + .calculate-step__label-checkbox:before {
+            border: 1px solid red;
+        }
+    }
+
+    &__label {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: white;
+        padding-left: 2.1rem;
+        position: relative;
+        cursor: pointer;
+        line-height: 1.2em;
+        display: block;
+    }
+
+    &__label-radio {
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            background-color: #5f5f5f;
+            transform: translateY(-50%);
+            border-color: transparent;
+            transition: all ease 0.3s;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: $yellow;
+            transform: translate(0.225rem, -50%);
+            opacity: 0;
+            transition: all ease 0.3s;
+        }
+    }
+
+    &__label-checkbox {
+        position: relative;
+
+        & img {
+            position: absolute;
+            width: 1.2rem;
+            height: 1.2rem;
+            left: 0;
+            top: 0.2rem;
+            // transform: translate(0, -50%);
+            opacity: 0;
+            transition: all ease 0.3s;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 0.2rem;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-color: #5f5f5f;
+            // transform: translateY(-50%);
+            border-color: transparent;
+            transition: all ease 0.3s;
+        }
+    }
+}
+
+.calculate-result {
+    padding: 2.3rem 1.8rem 3rem 3.3rem;
+    position: relative;
+
+    &__title {
+        font-weight: 600;
+        font-size: 11.1rem;
+        color: rgba(255, 255, 255, 0.3);
+        pointer-events: none;
+    }
+    &__content {
+        margin-top: 8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    &__result-wrap {
+        display: flex;
+        background-color: $yellow;
+        color: $bgcolor;
+        padding: 0.8rem 1rem;
+        font-size: 4.4rem;
+    }
+    &__result {
+        margin-right: 0.7rem;
+    }
+    &__description {
+        margin-left: 2.3rem;
+        padding-bottom: 0.333rem;
+        font-size: 0.95rem;
+        line-height: 1.1em;
     }
 }

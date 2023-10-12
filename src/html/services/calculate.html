@@ -2,36 +2,53 @@
     
     <div class="calculate__container container">
         
-        <div class="calculate__wrapper">
-            <div class="calculate__content" scroll style="opacity: 0;">
-                <h1 class="calculate__title">
-                    Рассчитать стоимость вашего проекта
-                </h1>
-            
-                <div class="calculate__subtitle">
-                    Вовлекающий текст, который покажет преимущества данного действия
+        <div class="calculate__wrapper" id="calculate-wrapper">
+            <div class="calculate__step-decor calculate-step-decor" style="opacity: 0;">
+                <div class="calculate-step-decor__prev" id="prev-button">
+                    <img src="@img/icons/arrow-grey.svg" alt="">
+                    <img src="@img/icons/arrow-white.svg" alt="">
+                </div>
+                <div class="calculate-step-decor__rectangles">
+                    <div class="calculate-step-decor__rectangle"></div>
+                    <div class="calculate-step-decor__rectangle"></div>
+                    <div class="calculate-step-decor__rectangle"></div>
+                    <div class="calculate-step-decor__rectangle"></div>
+                </div>
+            </div>
+            <div class="calculate__content-wrapper" id="calculate-content">
+                <div class="calculate__content" scroll style="opacity: 0;">
+                    <h1 class="calculate__title">
+                        Рассчитать стоимость вашего проекта
+                    </h1>
+                
+                    <div class="calculate__subtitle">
+                        Вовлекающий текст, который покажет преимущества данного действия
+                    </div>
+                
+                    <div class="calculate__button-wrap">
+                        <button id="create-calculator" type="button" class="calculate__button">
+                            <span>Рассчитать стоимость</span>
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="calculate__button-wrap">
-                    <button type="button" class="calculate__button">
-                        <span>Рассчитать стоимость</span>
-                    </button>
+                <div class="calculate__rectangles calculate-decor" scroll style="opacity: 0;">
+                    <div class="calculate-decor__rectangle"></div>
+                    <div class="calculate-decor__rectangle"></div>
+                    <div class="calculate-decor__rectangle"></div>
+                    <div class="calculate-decor__rectangle"></div>
+                
+                    <div class="calculate-decor__coin calculate-decor-coin">
+                        <div class="calculate-decor-coin__coin"></div>
+                        <div class="calculate-decor-coin__pocket"></div>
+                    </div>
                 </div>
             </div>
             
-            <div class="calculate__rectangles calculate-decor" scroll style="opacity: 0;">
-                <div class="calculate-decor__rectangle"></div>
-                <div class="calculate-decor__rectangle"></div>
-                <div class="calculate-decor__rectangle"></div>
-                <div class="calculate-decor__rectangle"></div>
-                
-                <div class="calculate-decor__coin calculate-decor-coin">
-                    <div class="calculate-decor-coin__coin"></div>
-                    <div class="calculate-decor-coin__pocket"></div>
-                </div>
-            </div>
         </div>
         
     </div>
     
 </section>
+
+@@include('templates.html', {})
