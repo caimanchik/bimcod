@@ -1,0 +1,71 @@
+<template id="step-template">
+    <div class="calculate__step calculate-step">
+        <div class="calculate-step__wrapper">
+            <h2 id="step-title" class="calculate-step__title">
+                
+            </h2>
+            
+            <form action="#" class="calculate-step__form">
+                <div id="step-inputs" class="calculate-step__inputs">
+                    
+                </div>
+                <div class="calculate-step__button-wrap">
+                    <button id="submit-step" type="submit" class="calculate-step__button">
+                        <span>Выбрать</span>
+                    </button>
+                </div>
+            </form>
+            
+            <div class="calculate-step__step">
+                [<span id="step-step"></span>]
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="input-text">
+    <input 
+        type="text" 
+        class="calculate-step__input calculate-step__input-text" 
+        placeholder=""
+    >
+</template>
+
+<template id="input-radio">
+    <div class="calculate-step__input-wrap">
+        <input 
+            type="radio" 
+            class="calculate-step__input calculate-step__input-radio"
+            name="radio"
+        >
+        <label class="calculate-step__label calculate-step__label-radio">
+            
+        </label>
+    </div>
+</template>
+
+<template id="input-checkbox">
+    <div class="calculate-step__input-wrap calculate-step__input-wrap-checkbox">
+        <input type="checkbox" class="calculate-step__input calculate-step__input-checkbox">
+        <label class="calculate-step__label calculate-step__label-checkbox">
+            <img src="@img/icons/checkbox.svg" alt="">
+        </label>
+    </div>
+</template>
+
+<template id="result-calculator">
+    <div class="calculate__result calculate-result">
+        <h2 class="calculate-result__title">
+            ИТОГО
+        </h2>
+        
+        <div class="calculate-result__content">
+            <div class="calculate-result__result-wrap">
+                <div id="result-container" class="calculate-result__result">115.000</div>₽
+            </div>
+            <div class="calculate-result__description">
+                Данная информация является справочной и не является публичной офертой. Окончательный расчет стоимости после обследования объекта.
+            </div>
+        </div>
+    </div>
+</template>
