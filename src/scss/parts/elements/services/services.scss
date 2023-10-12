@@ -17,7 +17,7 @@
         }
     }
     &__list {
-        padding: 0 5.3rem;
+        padding: 0 8rem 0 5.3rem;
         margin-top: 4rem;
     }
     &__item {
@@ -28,6 +28,8 @@
         &:last-child {
             margin-bottom: 0;
         }
+        
+        font-family: $anek;
     }
 }
 .services-item {
@@ -36,6 +38,10 @@
     &__number {
         flex: 0 0 6.8rem;
         font-size: 4.4rem;
+        // display: flex;
+        // align-items: center;
+        margin-bottom: -.9rem;
+        // justify-content: center;
     }
     &__text {
         font-size: 1.5rem;

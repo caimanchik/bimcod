@@ -5,6 +5,7 @@
 
     &__container {
     }
+    
     &__wrapper {
         background-color: $bgcolor;
         padding: 5.5rem 4rem 3.6rem;
@@ -96,26 +97,31 @@
             }
         }
     }
+    
     &__content {
         transition: all ease 0.3s;
         &.appear {
             opacity: 1 !important;
         }
     }
+    
     &__title {
         @extend %title1;
         font-size: 2.2rem;
         max-width: 25rem;
     }
+    
     &__subtitle {
         font-size: 1.3rem;
         font-weight: 400;
         max-width: 20rem;
         margin-top: 2.2rem;
     }
+    
     &__button-wrap {
         margin-top: 4rem;
     }
+    
     &__button {
         @extend %button;
         background-color: $yellow;
@@ -133,6 +139,7 @@
             color: white;
         }
     }
+    
     &__rectangles {
     }
 }
@@ -156,11 +163,13 @@
 
         transform: rotate(-45deg) skew(20deg, 20deg);
     }
+    
     &__coin {
     }
 
     &.appear {
         opacity: 1 !important;
+        
         .calculate-decor {
             &__rectangle {
                 &:nth-child(4) {
@@ -214,10 +223,8 @@
         height: 30px;
         border: 1px solid $yellow;
         background: $bgcolor;
-
-        // width: 70px;
-        //         height: 70px;
     }
+    
     &__pocket {
         position: absolute;
         width: 100px;
@@ -337,12 +344,9 @@
 
         pointer-events: none;
 
-        transform: translateY(40%);
-
-        & span {
-            position: relative;
-            top: -20px;
-        }
+        transform: translateY(50%);
+        
+        font-family: $anek;
     }
 
     &__input-wrap {
@@ -467,13 +471,17 @@
         font-size: 11.1rem;
         color: rgba(255, 255, 255, 0.3);
         pointer-events: none;
+        font-family: $anek;
+        margin-top: 1rem;
     }
+    
     &__content {
         margin-top: 8rem;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
     }
+    
     &__result-wrap {
         display: flex;
         background-color: $yellow;
@@ -481,9 +489,11 @@
         padding: 0.8rem 1rem;
         font-size: 4.4rem;
     }
+    
     &__result {
         margin-right: 0.7rem;
     }
+    
     &__description {
         margin-left: 2.3rem;
         padding-bottom: 0.333rem;
