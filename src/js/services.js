@@ -253,7 +253,7 @@ class Calculator {
         this.wrapperElement.classList.add('result')
 
         this.calculateContent.querySelector('#result-container').textContent =
-            (Math.round(result / 100) * 100).toLocaleString('de-DE')
+            (Math.round(result / 100) * 100).toLocaleString()
         
         setTimeout(() => template.classList.add('show'), 0);
     }
