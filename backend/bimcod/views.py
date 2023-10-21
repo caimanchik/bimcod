@@ -6,6 +6,10 @@ from bimcod.json_init.calculator_get import calculator
 from bimcod.models import NewsObject, Project, CapitalType, LinearProject, LinearProjectWork, LinearWork, \
     CapitalProject, CapitalWork, CapitalProjectWork
 
+from django.core.mail import send_mail
+from django.conf import settings
+from django.template.loader import render_to_string
+
 
 class NewsList(APIView):
     @staticmethod
@@ -31,6 +35,7 @@ class ProjectsList(APIView):
                 "id": x.id,
                 "title": x.title,
                 "description": x.description,
+                "preview": NOW_HOST + x.preview.url,
                 "images": [{
                     "url": NOW_HOST + e.image.url,
                     "alt": e.alt
@@ -120,3 +125,28 @@ class GetCalculator(APIView):
         insert_obj_result(capital, capital_project_obj, capital_work_obj, capital_project_work_obj, capital_vars)
 
         return Response(result)
+
+
+class SendUserResponse(APIView):
+    @staticmethod
+    def post(request):
+        data = request.data
+
+        msg_html = render_to_string('mail.html', {'form': data})
+        msg_plain = f'''
+Имя: {data['name']}
+Телефон: {data['phone']}
+Компания: {data['company']}
+Почта: {data['mail']}
+Сообщение: {data['message']}
+            '''
+
+        send_mail(
+            'Новая заявка на консультацию BIMCOD',
+            msg_plain,
+            settings.EMAIL_HOST_USER,
+            [settings.EMAIL_HOST_USER],
+            html_message=msg_html
+        )
+
+        return Response()

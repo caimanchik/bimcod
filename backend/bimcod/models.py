@@ -8,8 +8,11 @@ from bimcod.json_init.linear_project_work import linear_project_work
 from bimcod.json_init.linear_work import linear_work
 
 
-def get_upload_path_project(instance, filename):
+def get_upload_path_project_image(instance, filename):
     return f'projects/{instance.project.id}/{filename}'
+
+def get_upload_path_project_preview(instance, filename):
+    return f'projects/{instance.id}/preview/{filename}'
 
 
 class Project(models.Model):
@@ -18,6 +21,7 @@ class Project(models.Model):
 
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, verbose_name="Название")
+    preview = models.ImageField(verbose_name='Превью', upload_to=get_upload_path_project_preview)
     description = models.TextField(verbose_name="Описание")
 
     def __str__(self):
@@ -28,7 +32,7 @@ class ImageProject(models.Model):
     class Meta:
         verbose_name_plural = 'Фотографии проектов'
 
-    image = models.ImageField(upload_to=get_upload_path_project, unique=True, verbose_name="Фотография")
+    image = models.ImageField(upload_to=get_upload_path_project_image, unique=True, verbose_name="Фотография")
     alt = models.CharField(max_length=30, verbose_name="Замещающий текст про ошибке загрузки фото")
     project = models.ForeignKey(
         Project,
