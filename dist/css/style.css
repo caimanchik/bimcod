@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@500;600;700&family=Inter:wght@200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@500;
+
+600;700&family=Inter:wght@200;300;400;500&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -8,7 +10,6 @@
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -98,39 +99,60 @@ h6 {
   font-weight: 400;
 }
 
-.main-page .header__button, .header__button {
+.main-page .header__button,
+.header__button {
   padding: 0.6rem 1.8rem;
   border: 1px solid #fff;
   font-size: 1rem;
   position: relative;
+  -webkit-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
   transition: all ease 0.4s;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-.main-page .header__button span, .header__button span {
+
+.main-page .header__button span,
+.header__button span {
   z-index: 4;
   position: relative;
 }
-.main-page .header__button::after, .header__button::after {
+
+.main-page .header__button::after,
+.header__button::after {
   content: "";
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 0;
   height: 0;
   opacity: 0;
   background-color: #F3E14A;
+  -webkit-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
   transition: all ease 0.4s;
   pointer-events: none;
   z-index: 3;
 }
-.header__button:hover, .header__button:active {
+
+.header__button:hover,
+.header__button:active {
   color: black;
   border-color: transparent;
 }
-.header__button:hover::after, .header__button:active::after {
+
+.header__button:hover::after,
+.header__button:active::after {
   width: 101%;
   height: 100%;
   opacity: 1;
@@ -139,12 +161,19 @@ h6 {
 .header__column {
   position: relative;
   opacity: 0;
-  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
 }
+
 .appear.header__column {
   opacity: 1 !important;
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .container {
@@ -152,29 +181,9 @@ h6 {
   max-width: 1100px;
   width: 100%;
 }
-@media (max-width: 1124px) {
-  .container {
-    padding: 0 12px;
-  }
-}
 
 html {
   font-size: 16px;
-}
-@media (max-width: 1112px) {
-  html {
-    font-size: 15px;
-  }
-}
-@media (max-width: 992.98px) {
-  html {
-    font-size: 14px;
-  }
-}
-@media (max-width: 767.98px) {
-  html {
-    font-size: 13px;
-  }
 }
 
 body {
@@ -182,94 +191,144 @@ body {
   color: #fff;
   background-color: #212121;
 }
+
 body.lock {
   overflow: hidden;
 }
 
 .wrapper {
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
 }
 
 .main {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .header {
   position: fixed;
   left: 50%;
   top: 7px;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 100%;
   z-index: 3;
 }
+
 .header__wrapper {
   height: 4rem;
 }
+
 .header__container {
   height: 100%;
 }
+
 .header__columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
   background: rgba(255, 255, 255, 0.8);
   padding: 0 1.17rem;
 }
+
 .header__column {
-  flex-grow: 1;
-  transform: none;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  -webkit-transition: opacity ease 0.3s;
+  -o-transition: opacity ease 0.3s;
   transition: opacity ease 0.3s;
 }
+
 .header__column:nth-child(2) {
-  flex-grow: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
 }
+
 .header__column:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
+
 .header__button {
   color: #212121;
   border-color: #212121;
 }
+
 .header__button::after {
   background-color: #212121;
 }
+
 .header__button:visited {
   color: #212121;
 }
+
 .header__button:hover {
   color: white;
 }
+
 .header__button:hover:visited {
   color: white;
 }
+
 .header__button:hover::after {
   background-color: #212121;
 }
 
 .header-logos {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
+
 .header-logos__logo {
   position: relative;
   width: 2.1rem;
   height: 2.8rem;
 }
+
 .header-logos__logo img {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   left: 0;
   top: 0;
 }
+
 .header-logos__text {
   padding-left: 1.15rem;
   font-family: "Anek Gurmukhi", sans-serif;
@@ -277,60 +336,83 @@ body.lock {
   letter-spacing: 0.4em;
   font-weight: 600;
   position: relative;
-  transform: translateY(5px);
+  -webkit-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+          transform: translateY(5px);
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
   color: #212121;
 }
+
 .header-logos:hover .header-logos__text {
-  color: #786c08;
+  color: #F3E14A;
 }
 
 .header-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 -1.4rem;
 }
+
 .header-links__item {
   padding: 0 1.4rem;
 }
+
 .header-links__link {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 0.05em;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
   color: #212121;
 }
+
 .header-links__link:visited {
   color: #212121;
 }
+
 .header-links__link:hover {
-  color: #827509;
+  color: #F3E14A;
 }
 
 .main-page .header__columns {
   background-color: rgba(33, 33, 33, 0.8);
 }
+
 .main-page .header__button {
   color: white;
 }
+
 .main-page .header__button:hover {
   color: #212121;
 }
+
 .main-page .header__button:hover::after {
   background-color: #F3E14A;
 }
+
 .main-page .header-links__link {
   color: white;
 }
+
 .main-page .header-links__link:visited {
   color: white;
 }
+
 .main-page .header-links__link:hover {
   color: #F3E14A;
 }
+
 .main-page .header-logos__text {
   color: white;
 }
+
 .main-page .header-logos:hover .header-logos__text {
   color: #F3E14A;
 }
@@ -340,92 +422,152 @@ body.lock {
   padding: 4.2rem 0;
   color: #1a1a1a;
 }
-.footer__container {
-  max-width: 1000px;
-}
+
 .footer__columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .footer__column {
-  flex: 0 0 50%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
 }
+
 .footer__column:last-child {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
+
 .footer__title {
   font-size: 1.4rem;
   font-weight: 200;
 }
+
 .footer__list {
   margin-top: 2.5rem;
 }
+
 .footer__address {
   margin-top: 2.5rem;
   font-size: 1rem;
   font-weight: 300;
 }
+
 .footer__links {
   margin-top: 1.5rem;
 }
-.footer__card {
-  width: 80%;
+
+.footer__map {
+  width: 100%;
   height: 100%;
 }
 
 .footer-list__item {
   margin-top: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 1rem;
   font-weight: 300;
 }
+
 .footer-list__item:first-child {
   margin-top: 0;
 }
+
 .footer-list__link {
   margin-left: 0.5rem;
 }
 
 .footer-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .footer-links__item {
   width: 2.2rem;
   height: 1.4rem;
   margin-right: 1.6rem;
 }
+
 .footer-links__link {
   display: block;
   position: relative;
   height: 100%;
   width: 100%;
 }
+
 .footer-links__link img {
   position: absolute;
   width: auto;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   left: 50%;
   top: 0;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
 }
+
 .footer-links__link img:last-child {
   opacity: 0;
 }
+
+.footer-links__link:active img {
+  opacity: 0;
+}
+
+.footer-links__link:active img:last-child {
+  opacity: 1;
+}
+
+@media (max-width: 1124px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 1112px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992.98px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  html {
+    font-size: 13px;
+  }
+}
+
 @media (hover: hover) {
   .footer-links__link:hover img {
     opacity: 0;
   }
+
   .footer-links__link:hover img:last-child {
     opacity: 1;
   }
-}
-.footer-links__link:active img {
-  opacity: 0;
-}
-.footer-links__link:active img:last-child {
-  opacity: 1;
 }

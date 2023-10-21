@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/services.min.css">
+    <link rel="stylesheet" href="css/style.min.css?_v=20231021203213">
+    <link rel="stylesheet" href="css/services.min.css?_v=20231021203213">
     <title>BIMCOD</title>
 </head>
 
@@ -128,12 +128,12 @@
     <div class="calculate__step calculate-step">
         <div class="calculate-step__wrapper">
             <h2 id="step-title" class="calculate-step__title">
-                
+
             </h2>
-            
+
             <form action="#" class="calculate-step__form">
                 <div id="step-inputs" class="calculate-step__inputs">
-                    
+
                 </div>
                 <div class="calculate-step__button-wrap">
                     <button id="submit-step" type="submit" class="calculate-step__button">
@@ -141,7 +141,7 @@
                     </button>
                 </div>
             </form>
-            
+
             <div class="calculate-step__step">
                 [<span id="step-step"></span>]
             </div>
@@ -150,22 +150,14 @@
 </template>
 
 <template id="input-text">
-    <input 
-        type="text" 
-        class="calculate-step__input calculate-step__input-text" 
-        placeholder=""
-    >
+    <input type="text" class="calculate-step__input calculate-step__input-text" placeholder="">
 </template>
 
 <template id="input-radio">
     <div class="calculate-step__input-wrap">
-        <input 
-            type="radio" 
-            class="calculate-step__input calculate-step__input-radio"
-            name="radio"
-        >
+        <input type="radio" class="calculate-step__input calculate-step__input-radio" name="radio">
         <label class="calculate-step__label calculate-step__label-radio">
-            
+
         </label>
     </div>
 </template>
@@ -184,15 +176,43 @@
         <h2 class="calculate-result__title">
             Итого
         </h2>
-        
+
         <div class="calculate-result__content">
             <div class="calculate-result__result-wrap">
-                <div id="result-container" class="calculate-result__result">115.000</div>₽
+                <div id="result-container" class="calculate-result__result"></div><span>₽</span>
             </div>
-            <div class="calculate-result__description">
-                Данная информация является справочной и не является публичной офертой. Окончательный расчет стоимости после обследования объекта.
+            <div class="calculate-result__description" id="result-description">
+                Данная информация является справочной и не является публичной офертой. Окончательный расчет стоимости
+                после обследования объекта.
             </div>
         </div>
+    </div>
+</template>
+
+<template id="news-item">
+    <li class="news-news__item news-news-item">
+        <div class="news-news-item__column">
+            <div class="news-news-item__image" id="news-image">
+                
+            </div>
+        </div>
+    
+        <div class="news-news-item__column">
+            <div class="news-news-item__content">
+                <h2 class="news-news-item__title" id="news-title">
+                    
+                </h2>
+                <div class="news-news-item__text" id="news-text">
+                    
+                </div>
+            </div>
+        </div>
+    </li>
+</template>
+
+<template id="loader-temp">
+    <div class="loader__wrap">
+        <img src="img/icons/loader.svg" alt="">
     </div>
 </template>
             <section class="services" id="services-services">
@@ -342,7 +362,7 @@
             
             <div class="footer__column">
                 <iframe
-                    class="footer__card"
+                    class="footer__map"
                     src="https://yandex.ru/map-widget/v1/?um=constructor%3A76f28ded54ac608b22cec6709734d8c68c0e8c421df4ac3d742b12329dce44fd&amp;source=constructor"
                     frameborder="0">
                 </iframe>
@@ -354,8 +374,8 @@
 </footer>
     </div>
 
-    <script src="js/app.min.js"></script>
-    <script src="js/services.min.js"></script>
+    <script src="js/app.min.js?_v=20231021203213"></script>
+    <script src="js/services.min.js?_v=20231021203213"></script>
 </body>
 
 </html>
