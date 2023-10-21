@@ -524,5 +524,16 @@
         padding-bottom: 0.333rem;
         font-size: 0.95rem;
         line-height: 1.1em;
+        
+        &.outoflist {
+            position: relative;
+            
+            &::before {
+                content: '*';
+                position: absolute;
+                left: -10px;
+                top: 0px;
+            }
+        }
     }
 }
