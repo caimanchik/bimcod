@@ -464,6 +464,12 @@
     
     &.show {
         opacity: 1;
+        
+        .calculate-result__result-wrap {
+            &::after {
+                width: 100%;
+            }
+        }
     }
 
     &__title {
@@ -484,14 +490,33 @@
     
     &__result-wrap {
         display: flex;
-        background-color: $yellow;
+        // background-color: $yellow;
         color: $bgcolor;
         padding: 0.8rem 1rem;
         font-size: 4.4rem;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 0;
+            height: 100%;
+            transition: all ease 1s;
+            background-color: $yellow;
+        }
+        
+        & span {
+            position: relative;
+            z-index: 2;
+        }
     }
     
     &__result {
         margin-right: 0.7rem;
+        position: relative;
+        z-index: 2;
     }
     
     &__description {

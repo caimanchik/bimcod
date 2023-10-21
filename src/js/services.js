@@ -103,9 +103,7 @@ class Calculator {
         textInput.addEventListener('click', () => textInput.classList.remove('warning'))
 
         this.submitButtonStep(template, () => {
-            if (!(this.step === 2
-                ? this.isCorrectInputedTextLength(textInput.value)
-                : this.isCorrectInputedTextSquare(textInput.value))) {
+            if (!this.isCorrectInputedText(textInput.value)) {
                 textInput.classList.add('warning')
                 return
             }
@@ -117,22 +115,7 @@ class Calculator {
         })
     }
 
-    isCorrectInputedTextLength(text) {
-        if (/[^0-9км .,]/.test(text)
-            || (text.match(/[,.]/g) || []).length > 1
-            || text === ''
-            || /[км]/.test(text) && !text.includes('км')
-            || text.match(/км[ .,]+\d/)
-            || text.match(/км\d/)
-            || !text.match(/\d/)
-            || /[,.]/.test(text) && (!/[,.]\d/.test(text) || !/\d[,.]/.test(text))
-        )
-            return false
-
-        return true
-    }
-
-    isCorrectInputedTextSquare(text) {
+    isCorrectInputedText(text) {
         if (/[^0-9 .,]/.test(text)
             || (text.match(/[,.]/g) || []).length > 1
             || text === ''
@@ -246,6 +229,7 @@ class Calculator {
 
     initResultStep() {
         const result = this.calculateResult()
+        // const result = 13428000.11
         const resultTemplate = document.querySelector('#result-calculator');
         const template = resultTemplate.content.firstElementChild.cloneNode(true)
 
