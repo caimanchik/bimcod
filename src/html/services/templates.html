@@ -2,12 +2,12 @@
     <div class="calculate__step calculate-step">
         <div class="calculate-step__wrapper">
             <h2 id="step-title" class="calculate-step__title">
-                
+
             </h2>
-            
+
             <form action="#" class="calculate-step__form">
                 <div id="step-inputs" class="calculate-step__inputs">
-                    
+
                 </div>
                 <div class="calculate-step__button-wrap">
                     <button id="submit-step" type="submit" class="calculate-step__button">
@@ -15,7 +15,7 @@
                     </button>
                 </div>
             </form>
-            
+
             <div class="calculate-step__step">
                 [<span id="step-step"></span>]
             </div>
@@ -24,22 +24,14 @@
 </template>
 
 <template id="input-text">
-    <input 
-        type="text" 
-        class="calculate-step__input calculate-step__input-text" 
-        placeholder=""
-    >
+    <input type="text" class="calculate-step__input calculate-step__input-text" placeholder="">
 </template>
 
 <template id="input-radio">
     <div class="calculate-step__input-wrap">
-        <input 
-            type="radio" 
-            class="calculate-step__input calculate-step__input-radio"
-            name="radio"
-        >
+        <input type="radio" class="calculate-step__input calculate-step__input-radio" name="radio">
         <label class="calculate-step__label calculate-step__label-radio">
-            
+
         </label>
     </div>
 </template>
@@ -58,14 +50,42 @@
         <h2 class="calculate-result__title">
             Итого
         </h2>
-        
+
         <div class="calculate-result__content">
             <div class="calculate-result__result-wrap">
-                <div id="result-container" class="calculate-result__result">115.000</div>₽
+                <div id="result-container" class="calculate-result__result"></div><span>₽</span>
             </div>
-            <div class="calculate-result__description">
-                Данная информация является справочной и не является публичной офертой. Окончательный расчет стоимости после обследования объекта.
+            <div class="calculate-result__description" id="result-description">
+                Данная информация является справочной и не является публичной офертой. Окончательный расчет стоимости
+                после обследования объекта.
             </div>
         </div>
+    </div>
+</template>
+
+<template id="news-item">
+    <li class="news-news__item news-news-item">
+        <div class="news-news-item__column">
+            <div class="news-news-item__image" id="news-image">
+                
+            </div>
+        </div>
+    
+        <div class="news-news-item__column">
+            <div class="news-news-item__content">
+                <h2 class="news-news-item__title" id="news-title">
+                    
+                </h2>
+                <div class="news-news-item__text" id="news-text">
+                    
+                </div>
+            </div>
+        </div>
+    </li>
+</template>
+
+<template id="loader-temp">
+    <div class="loader__wrap">
+        <img src="@img/icons/loader.svg" alt="">
     </div>
 </template>

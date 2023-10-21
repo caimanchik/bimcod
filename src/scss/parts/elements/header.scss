@@ -104,7 +104,8 @@
 
     &:hover {
         .header-logos__text {
-            color: darken($yellow, 37%);
+            // color: darken($yellow, 37%);
+            color: $yellow;
         }
     }
 }
@@ -119,7 +120,7 @@
     }
     &__link {
         display: inline-block;
-        font-size: 1rem;
+        font-size: .9rem;
         letter-spacing: 0.05em;
         transition: all ease 0.3s;
         color: $bgcolor;
@@ -129,7 +130,8 @@
         }
 
         &:hover {
-            color: darken($yellow, 35%);
+            // color: darken($yellow, 35%);
+            color: $yellow;
         }
     }
 }

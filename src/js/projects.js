@@ -1,7 +1,9 @@
+import { getRequest, BACKEND_HOST } from './modules/requests.js';
+
 const moreButton = document.querySelector('#more')
 const projectsContainer = document.querySelector('#projects')
 
-let pageNumber = 0
+let pageNumber = 1
 let clicked = true
 
 initProjectsHtml(pageNumber)
@@ -13,14 +15,15 @@ moreButton.addEventListener('click', () => {
 })
 
 async function getProjectsData(page) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(Array(6).fill({
-                title: 'Детский сад',
-                imageUrl: 'img/projects/1.jpg',
-                link: 'project.html?id=1'
-            }))
-        }, 1000);
+    return getRequest(`${BACKEND_HOST}/projectsList?page=${page}`, (data) => {
+        return data.map(e => ({
+            title: e.title,
+            image: {
+                url: e.images[0].url,
+                alt: e.images[0].alt,
+            },
+            link: `project.html?id=${e.id}`
+        }))
     })
 }
 
@@ -68,14 +71,23 @@ function initLink(params) {
     imgWrapper.classList.add('projects-project__img')
     
     const img = document.createElement('img')
-    img.src = params.imageUrl
-    img.alt = params?.alt ?? 'Фото проекта'
+    img.src = params.image.url
+    img.alt = params.image.alt
     
     imgWrapper.appendChild(img)
     link.appendChild(title)
     link.appendChild(imgWrapper)
     
     return link
+}
+
+function removeExtraLinks(part, count) {
+    Array.from(part.childNodes).forEach((e, i) => {
+        if (i < count)
+            return
+        
+        e.remove()
+    })
 }
 
 async function initProjectsHtml(page) {
@@ -102,4 +114,10 @@ async function initProjectsHtml(page) {
             link.classList.add('visible')
         });
     }, 100);
+    
+    if (params.length < 6) {
+        moreButton.remove()
+        
+        removeExtraLinks(part, params.length)
+    }
 }

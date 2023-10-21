@@ -24,54 +24,12 @@
                         
                         <div class="news__news news-news">
                             
-                            <ul class="news-news__container">
-                                <li class="news-news__section">
-                                    <ul class="news-news__subsection">
-                                        <li class="news-news__item news-news-item">
-                                            <div class="news-news-item__column">
-                                                <div class="news-news-item__image">
-                                                    <img src="@img/projects/1.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="news-news-item__column">
-                                                <div class="news-news-item__content">
-                                                    <h2 class="news-news-item__title">
-                                                        Проектирование детского сайта
-                                                    </h2>
-                                                    <div class="news-news-item__text">
-                                                        Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования и инженерных изысканий.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="news-news__item news-news-item">
-                                            <div class="news-news-item__column">
-                                                <div class="news-news-item__image">
-                                                    <img src="@img/projects/1.jpg" alt="">
-                                                </div>
-                                            </div>
-                                        
-                                            <div class="news-news-item__column">
-                                                <div class="news-news-item__content">
-                                                    <h2 class="news-news-item__title">
-                                                        Проектирование детского сайта
-                                                    </h2>
-                                                    <div class="news-news-item__text">
-                                                        Высокий уровень профессионализма в области проектирования и инженерных изысканий. высокий уровень
-                                                        профессионализма в области проектирования и инженерных изысканий. Высокий уровень профессионализма в
-                                                        области проектирования и инженерных изысканий. высокий уровень профессионализма в области проектирования
-                                                        и инженерных изысканий.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
+                            <ul class="news-news__container" id="news-container">
+                                
                             </ul>
                             
                             <div class="news-news__button-wrap" scroll>
-                                <button class="news-news__button">
+                                <button class="news-news__button" id="more">
                                     <span>Показать еще</span>
                                 </button>
                             </div>
@@ -86,6 +44,7 @@
         </main>
 
         @@include('html/footer.html', {})
+        @@include('html/services/templates.html', {})
     </div>
 
     <script src="js/app.min.js"></script>

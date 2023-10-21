@@ -1,4 +1,5 @@
 import { initScrollAppear } from "./modules/functions.js"
+import { getRequest, BACKEND_HOST } from './modules/requests.js';
 
 class Calculator {
     constructor(calculator) {
@@ -102,9 +103,7 @@ class Calculator {
         textInput.addEventListener('click', () => textInput.classList.remove('warning'))
 
         this.submitButtonStep(template, () => {
-            if (!(this.step === 2
-                ? this.isCorrectInputedTextLength(textInput.value)
-                : this.isCorrectInputedTextSquare(textInput.value))) {
+            if (!this.isCorrectInputedText(textInput.value)) {
                 textInput.classList.add('warning')
                 return
             }
@@ -116,22 +115,7 @@ class Calculator {
         })
     }
 
-    isCorrectInputedTextLength(text) {
-        if (/[^0-9км .,]/.test(text)
-            || (text.match(/[,.]/g) || []).length > 1
-            || text === ''
-            || /[км]/.test(text) && !text.includes('км')
-            || text.match(/км[ .,]+\d/)
-            || text.match(/км\d/)
-            || !text.match(/\d/)
-            || /[,.]/.test(text) && (!/[,.]\d/.test(text) || !/\d[,.]/.test(text))
-        )
-            return false
-
-        return true
-    }
-
-    isCorrectInputedTextSquare(text) {
+    isCorrectInputedText(text) {
         if (/[^0-9 .,]/.test(text)
             || (text.match(/[,.]/g) || []).length > 1
             || text === ''
@@ -244,7 +228,8 @@ class Calculator {
     }
 
     initResultStep() {
-        const result = this.calculateResult()
+        const [result, isOutOfList] = this.calculateResult()
+        // const result = 13428000.11
         const resultTemplate = document.querySelector('#result-calculator');
         const template = resultTemplate.content.firstElementChild.cloneNode(true)
 
@@ -255,6 +240,12 @@ class Calculator {
         this.calculateContent.querySelector('#result-container').textContent =
             (Math.round(result / 100) * 100).toLocaleString()
         
+        if (isOutOfList)
+        {
+            this.calculateContent.querySelector('#result-description').textContent = 'Сумма определена без учета пунктов, которых не было в списке, для получения более полной информации заполните анкету. Данная информация является справочной и не является публичной офертой. Окончательный расчет стоимости после обследования объекта.'
+            this.calculateContent.querySelector('#result-description').classList.add('outoflist')
+        }
+        
         setTimeout(() => template.classList.add('show'), 0);
     }
 
@@ -264,34 +255,49 @@ class Calculator {
             result = this.calculateLinearResult()
         else
             result = this.calculateCapitalResult()
-
+        
+        console.log(result)
         return result
     }
 
     calculateLinearResult() {
         const k = this.calculator.steps[3][1].variants[this.result[3]].k
+        let isOutOfList = false
+        
         const sumSections = this.result[4]
             .map(e => this.calculator.steps[4][1].variants[this.result[3]][e].price)
-            .reduce((prev, e) => e > 0 ? prev + e : 0, 0)
+            .reduce((prev, e) => {
+                if (e > 0)
+                    return prev + e
 
-        return this.result[2] * k * sumSections
+                isOutOfList = true
+                return prev
+            }, 0)
+
+        return [this.result[2] * k * sumSections, isOutOfList]
     }
 
     calculateCapitalResult() {
         const k1 = this.calculator.steps[2][0].variants[this.result[2]].k
         const k2 = this.calculator.steps[4][0].variants[this.result[4]].k
+        let isOutOfList = false
 
         const sumSections = this.result[5]
             .map(e => this.calculator.steps[5][0].variants[this.result[4]][e].price)
-            .reduce((prev, e) => e > 0 ? prev + e : 0, 0)
+            .reduce((prev, e) => {
+                if (e > 0)
+                    return prev + e
+                
+                isOutOfList = true
+                return prev
+            }, 0)
 
-        return this.result[3] * k1 * k2 * sumSections
+        return [this.result[3] * k1 * k2 * sumSections, isOutOfList]
     }
 }
 
 async function getPricing() {
-    return fetch('files/pricing.json')
-        .then(res => res.json())
+    return getRequest(`${BACKEND_HOST}/getCalculator`, (r) => r)
 }
 
 async function initCalculator() {
