@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заявка</title>
+</head>
+<body>
+    <div style="width: 100%; height: 100%; background-color: #212121; padding: 30px;">
+        <h1 style="color: white; font-size: 30px;">
+            Новая заявка на обратную консультацию BIMCOD
+        </h1>
+        
+        <div style="color: white; font-size: 20px; margin-top: 10px">
+            Имя: <span style="font-weight: bold; ">{{ form.name }}</span>
+        </div>
+
+        <div style="color: white; font-size: 20px; margin-top: 10px">
+            Телефон: <a style="color: white !important; font-weight: bold; text-decoration: none;" href="tel:{{ form.phone }}">{{ form.phone }}</a>
+        </div>
+
+        <div style="color: white; font-size: 20px; margin-top: 10px">
+            Почта: <a href="mailto:{{ form.mail }}" style="color: white !important; font-weight: bold; text-decoration: none">{{ form.mail }}</a>
+        </div>
+
+        <div style="color: white; font-size: 20px; margin-top: 10px">
+            Компания: <span style="font-weight: bold;">{{ form.company }}</span>
+        </div>
+
+        <div style="color: white; font-size: 20px; margin-top: 10px">
+            Сообщение: <span style="font-weight: bold;">{{ form.message }}</span>
+        </div>
+
+    </div>
+</body>
+</html>

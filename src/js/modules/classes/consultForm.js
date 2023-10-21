@@ -1,3 +1,5 @@
+import { postRequest, BACKEND_HOST } from '../requests.js';
+
 export class ConsultForm {
     errors = {
         0: 'Заполните все обязательные поля',
@@ -74,11 +76,15 @@ export class ConsultForm {
             if (errorsSet.size > 0) {
                 this.showError(errorsSet, wrongFileds)
             } else {
-                console.log(formValues)
+                this.sendRequest(formValues)
             }
         });
 
         this.fields.forEach(field => field.addEventListener('click', () => field.classList.remove('wrong')))
+    }
+    
+    sendRequest(data) {
+        postRequest(`${BACKEND_HOST}/sendUserResponse`, data)
     }
 
     formatPhone(field) {

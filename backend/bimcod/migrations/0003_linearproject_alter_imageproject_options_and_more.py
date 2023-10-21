@@ -49,7 +49,7 @@ class Migration(migrations.Migration):
             name="image",
             field=models.ImageField(
                 unique=True,
-                upload_to=bimcod.models.get_upload_path_project,
+                upload_to=bimcod.models.get_upload_path_project_image,
                 verbose_name="Фотография",
             ),
         ),

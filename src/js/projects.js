@@ -18,10 +18,7 @@ async function getProjectsData(page) {
     return getRequest(`${BACKEND_HOST}/projectsList?page=${page}`, (data) => {
         return data.map(e => ({
             title: e.title,
-            image: {
-                url: e.images[0].url,
-                alt: e.images[0].alt,
-            },
+            preview: e.preview,
             link: `project.html?id=${e.id}`
         }))
     })
@@ -71,8 +68,7 @@ function initLink(params) {
     imgWrapper.classList.add('projects-project__img')
     
     const img = document.createElement('img')
-    img.src = params.image.url
-    img.alt = params.image.alt
+    img.src = params.preview
     
     imgWrapper.appendChild(img)
     link.appendChild(title)

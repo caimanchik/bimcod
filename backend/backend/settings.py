@@ -12,6 +12,22 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+# kJiTA3|rryU1
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = "bimcod-callback@mail.ru"
+EMAIL_HOST_PASSWORD = "Wrivd89uv5SRjyGncmjT"
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +42,8 @@ SECRET_KEY = "django-insecure-p6o2)j9nk_-ch_%!k(ul&xdm-d@g*6$_y4+(7xpk3zk%#+by_-
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    '127.0.0.1',
+    'localhost:8000'
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True

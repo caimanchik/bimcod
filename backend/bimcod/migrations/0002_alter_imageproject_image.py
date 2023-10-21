@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             model_name="imageproject",
             name="image",
             field=models.ImageField(
-                unique=True, upload_to=bimcod.models.get_upload_path_project
+                unique=True, upload_to=bimcod.models.get_upload_path_project_image
             ),
         ),
     ]

@@ -95,9 +95,9 @@
 
         & img {
             position: absolute;
-            width: 95%;
-            height: 95%;
-            object-fit: contain;
+            width: 101%;
+            height: 101%;
+            object-fit: cover;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
@@ -106,7 +106,7 @@
 
         &:hover {
             & img {
-                transform: translate(-50%, -50%) scale(0.99);
+                transform: translate(-50%, -50%) scale(1.01);
             }
         }
     }
@@ -115,11 +115,16 @@
     }
     &__button {
         @extend %button;
+        display: inline-block;
         color: $bgcolor;
         border-color: $bgcolor;
 
         &::after {
             background-color: $bgcolor;
+        }
+        
+        &:visited {
+            color: $bgcolor;
         }
 
         &:hover {
@@ -129,5 +134,7 @@
                 background-color: $bgcolor;
             }
         }
+        
+        
     }
 }

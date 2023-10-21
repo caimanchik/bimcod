@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "image",
-                    models.ImageField(upload_to=bimcod.models.get_upload_path_project),
+                    models.ImageField(upload_to=bimcod.models.get_upload_path_project_image),
                 ),
                 ("alt", models.CharField(max_length=30)),
                 (
