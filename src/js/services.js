@@ -1,4 +1,5 @@
 import { initScrollAppear } from "./modules/functions.js"
+import { getRequest, BACKEND_HOST } from './modules/requests.js';
 
 class Calculator {
     constructor(calculator) {
@@ -290,8 +291,7 @@ class Calculator {
 }
 
 async function getPricing() {
-    return fetch('files/pricing.json')
-        .then(res => res.json())
+    return getRequest(`${BACKEND_HOST}/getCalculator`, (r) => r)
 }
 
 async function initCalculator() {
