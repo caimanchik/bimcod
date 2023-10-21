@@ -16,8 +16,8 @@ class NewsList(APIView):
                 "id": x.id,
                 "title": x.title,
                 "description": x.description,
-                "url": x.image.url
-            } for x in NewsObject.objects.all()[(6 * (page - 1)):(6 * page)]]
+                "url": NOW_HOST + x.image.url
+            } for x in NewsObject.objects.order_by('-id')[(2 * (page - 1)):(2 * page)]]
 
         return Response(result)
 
@@ -35,7 +35,11 @@ class ProjectsList(APIView):
                     "url": NOW_HOST + e.image.url,
                     "alt": e.alt
                 } for e in x.images.all()]
-            } for x in Project.objects.all()[(6 * (page - 1)):(6 * page)]]
+            } for x in Project
+                .objects
+                .all()
+                .order_by('-id')
+                [(6 * (page - 1)):(6 * page)]]
 
         return Response(result)
 
