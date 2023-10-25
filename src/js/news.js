@@ -39,20 +39,22 @@ async function appendNewsHtml(page) {
     
     const newsData = await getNewsData(page)
     let another = false
+    const imagesPromises = []
     
     newsData.forEach((e, i) => {
         const imageWrap = items[i].querySelector('#news-image')
         
         const image = document.createElement('img')
         
-        image.onload = function() {
-            if (!another) {
-                another = true
-                return
-            }
-            removeLoader(loader)
-            items.forEach(e => e.classList.add('visible'))
-        }
+        imagesPromises.push(new Promise(resolve => {
+            image.onload = () => resolve()
+        }))
+        
+        Promise.all(imagesPromises)
+            .then(() => {
+                removeLoader(loader)
+                items.forEach(e => e.classList.add('visible'))
+            })
         
         image.src = e.url
         imageWrap.append(image)

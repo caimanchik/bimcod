@@ -222,10 +222,11 @@ body.lock {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 100%;
-  z-index: 3;
+  z-index: 5;
 }
 
 .header__wrapper {
+  min-height: 4rem;
   height: 4rem;
 }
 
@@ -371,6 +372,7 @@ body.lock {
   -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
   color: #212121;
+  position: relative;
 }
 
 .header-links__link:visited {
@@ -553,6 +555,41 @@ body.lock {
 @media (max-width: 992.98px) {
   html {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 860px) {
+  .header {
+    left: 0;
+    top: 0;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+
+  .header__container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .header__button span {
+    font-size: 0.8rem;
+  }
+
+  .header-logos__text {
+    font-size: 1rem;
+  }
+
+  .header-links {
+    margin: 0 -1rem;
+  }
+
+  .header-links__item {
+    padding: 0 1rem;
+  }
+
+  .header-links__link {
+    font-size: 0.75rem;
   }
 }
 

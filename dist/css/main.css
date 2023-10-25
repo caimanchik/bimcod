@@ -135,8 +135,8 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: right bottom;
-     object-position: right bottom;
+  -o-object-position: left top;
+     object-position: left top;
 }
 
 .video__container {

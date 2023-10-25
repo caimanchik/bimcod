@@ -74,7 +74,7 @@ function initLink(params) {
     link.appendChild(title)
     link.appendChild(imgWrapper)
     
-    return link
+    return [link, img]
 }
 
 function removeExtraLinks(part, count) {
@@ -95,25 +95,35 @@ async function initProjectsHtml(page) {
     
     clicked = false
     const links = []
+    const imagesPromises = []
     
     params.forEach((params, i) => {
-        const link = initLink(params)
+        const [link, img] = initLink(params)
+        
+        imagesPromises.push(new Promise(resolve => {
+            img.onload = () => resolve();
+        }))
         
         links.push(link)
         projects[i].appendChild(link)
     });
     
-    loader.classList.add('hidden')
+    Promise.all(imagesPromises)
+        .then(() => {
+            loader.classList.add('hidden')
+
+            setTimeout(() => {
+                links.forEach(link => {
+                    link.classList.add('visible')
+                });
+            }, 100);
+
+            if (params.length < 6) {
+                moreButton.remove()
+
+                removeExtraLinks(part, params.length)
+            }
+        })
     
-    setTimeout(() => {
-        links.forEach(link => {
-            link.classList.add('visible')
-        });
-    }, 100);
     
-    if (params.length < 6) {
-        moreButton.remove()
-        
-        removeExtraLinks(part, params.length)
-    }
 }
