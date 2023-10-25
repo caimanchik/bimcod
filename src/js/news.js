@@ -66,8 +66,6 @@ async function appendNewsHtml(page) {
     if (items.length > newsData.length){
         clearUnused(items, newsData.length)
         moreButton.remove()
-        items[0].classList.add('visible')
-        removeLoader(loader)
     }
 }
 
