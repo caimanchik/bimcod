@@ -2,6 +2,10 @@
     padding: 8.8rem 0 2.5rem;
     background-color: $yellow;
     color: $bgcolor;
+    
+    @media(max-width:700px){
+        padding: 6.5rem 0 2.5rem;
+    }
 
     &__container {
     }
@@ -17,6 +21,14 @@
         font-size: 1.4rem;
         font-weight: 500;
         line-height: 1.28em;
+
+        @media (max-width: 1000px) {
+            padding-right: 4rem;
+        }
+
+        @media (max-width: 600px) {
+            padding-right: 2rem;
+        }
     }
     &__swiper-container {
         margin-left: calc(calc(100vw - $mw) / 2);
@@ -24,6 +36,18 @@
         width: calc($mw + 3rem);
         overflow: hidden;
         @extend %scroll;
+
+        @media (max-width: ($mw + 70px)) {
+            margin-left: 35px;
+            width: calc(100vw - 35px);
+            max-width: calc(100vw - 35px);
+        }
+        
+        @media(max-width:500px){
+            margin-left: 20px;
+            width: calc(100vw - 20px);
+            max-width: calc(100vw - 20px);
+        }
     }
 }
 
@@ -60,8 +84,10 @@
 .about-swiper {
     margin-top: 2rem;
     &__wrapper {
+        margin: 0 0 0 -0.3rem;
     }
     &__slide {
+        padding: 0 0.42rem;
     }
     &__img {
         width: 100%;
@@ -77,10 +103,15 @@
             top: 0;
         }
     }
-    
+
     &__navigation {
         margin-top: 5rem;
         display: flex;
+        
+        @media(max-width:510px){
+            justify-content: flex-end;
+            margin-right: 2rem;
+        }
     }
 
     &__arrow {
