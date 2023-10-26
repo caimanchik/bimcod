@@ -9,7 +9,6 @@ export function getRequest(url, serializer) {
         },
     })
         .then(r => r.json())
-        .then(r => new Promise(resolve => setTimeout(() => resolve(r), 1000)))
         .then(serializer)
 }
 

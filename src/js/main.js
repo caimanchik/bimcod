@@ -3,10 +3,9 @@ import { handleTextareaHeight, scrollTo } from './modules/functions.js';
 import { getRequest, BACKEND_HOST } from './modules/requests.js';
 
 import { Swiper } from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
-
 
 
 handleTextareaHeight(document.querySelector('.form-form'))
@@ -38,6 +37,7 @@ async function initProjectSwiper() {
         image.src = e.image
         
         slide.querySelector('#project-slide-image').append(image)
+        slide.querySelector('#project-slide-image').href = e.link
         slide.querySelector('#project-slide-link').href = e.link
         
         wrapper.append(slide)
@@ -48,7 +48,8 @@ async function initProjectSwiper() {
         slidesPerView: 1,
         modules: [
             Pagination,
-            Navigation
+            Navigation,
+            Autoplay
         ],
         pagination: {
             el: '.swiper-pagination',
@@ -59,7 +60,10 @@ async function initProjectSwiper() {
             prevEl: '.swiper-button-prev',
         },
         updateOnWindowResize: true,
-        loop: true
+        loop: true,
+        autoplay: {
+            delay: 5000
+        }
     })
 }
 
@@ -88,9 +92,18 @@ async function initNewsSlider() {
                     slide.querySelector('#news-slide-image').append(image)
                     
                     newsWrapper.append(slide)
+                    
                 })
             
             newsSwiper.updateSlides()
+            
+            let max = Array.from(document.querySelectorAll('.news-swiper-slide'))
+                .map(e => e.getBoundingClientRect().height)
+                .reduce((prev, now) => Math.max(prev, now), 0);
+
+            // console.log(Array.from(document.querySelectorAll('.news-swiper-slide')))
+
+            document.querySelector('.news-swiper__wrapper').style.height = max + 'px';
     })
     
     // console.log(newsResponses.map(e => e.))
@@ -99,7 +112,7 @@ async function initNewsSlider() {
 
 const newsSwiper = new Swiper(".news-swiper", {
     simulateTouch: false,
-    slidesPerView: 4,
+    slidesPerView: 1.1,
     modules: [
         Navigation
     ],
@@ -109,10 +122,28 @@ const newsSwiper = new Swiper(".news-swiper", {
     },
     updateOnWindowResize: true,
     rewind: true,
-    spaceBetween: 30,
-    preventClicks: true
+    // spaceBetween: 30,
+    preventClicks: true,
+    breakpoints: {
+        1100: {
+            slidesPerView: 4
+        },
+        900: {
+            slidesPerView: 3.5
+        },
+        790: {
+            slidesPerView: 2.8
+        },
+        560: {
+            slidesPerView: 2.2
+        },
+        440: {
+            slidesPerView: 1.7
+        },
+    }
 })
 
 document.querySelector('#leave-request').addEventListener('click', (e) => {
-    scrollTo(document.querySelector('.form'), e)
-})
+    scrollTo(document.querySelector('.form'), e);
+    document.querySelector('.header__wrapper').click();
+});

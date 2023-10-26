@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20231025213249">
-    <link rel="stylesheet" href="css/services.min.css?_v=20231025213249">
+    <link rel="stylesheet" href="css/style.min.css?_v=20231026202830">
+    <link rel="stylesheet" href="css/services.min.css?_v=20231026202830">
     <title>BIMCOD</title>
 </head>
 
 <body>
     <div class="wrapper">
         <header class="header">
-    <div class="header__wrapper">
-        <div class="header__container container">
+    <div id="opened-class" class="header__wrapper">
+        <div id="stop-prop" class="header__container container">
             <div class="header__columns">
                 
                 <div class="header__column" scroll="0.5" style="opacity: 0;">
-                    <a href="index.html" class="header__logos header-logos">
+                    <div class="header__burger header-burger">
+                        <button id="open-burger" type="button" class="header-burger__button">
+                            <div class="header-burger__line"></div>
+                            <div class="header-burger__line"></div>
+                            <div class="header-burger__line"></div>
+                        </button>
+                    </div>
+                    <a id="opened-class" href="index.html" class="header__logos header-logos">
                         <div class="header-logos__logo">
                             <img src="img/icons/logo.svg" alt="Логотип">
                         </div>
@@ -27,7 +34,7 @@
                     </a>
                 </div>
                 
-                <div class="header__column" scroll="0.5" style="opacity: 0;">
+                <div id="opened-class" class="header__column" scroll="0.5" style="opacity: 0;">
                     <nav class="header__nav">
                         <ul class="header__links header-links">
                             <li class="header-links__item">
@@ -57,13 +64,17 @@
                             </li>
                         </ul>
                     </nav>
+                    
+                    <div class="header__button_wrap">
+                        <a id="leave-request" href="request.html" class="header__button">
+                            <span>Оставить заявку</span>
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="header__column" scroll="0.5" style="opacity: 0;">
-                    <a id="leave-request" href="request.html" class="header__button">
-                        <span>Оставить заявку</span>
-                    </a>
-                </div>
+                <!-- <div class="header__column" scroll="0.5" style="opacity: 0;">
+                    
+                </div> -->
                 
             </div>
         </div>
@@ -374,8 +385,8 @@
 </footer>
     </div>
 
-    <script src="js/app.min.js?_v=20231025213249"></script>
-    <script src="js/services.min.js?_v=20231025213249"></script>
+    <script src="js/app.min.js?_v=20231026202830"></script>
+    <script src="js/services.min.js?_v=20231026202830"></script>
 </body>
 
 </html>

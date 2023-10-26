@@ -1,12 +1,22 @@
 .form {
     padding: 5.8rem 0 2.2rem;
     background-color: $yellow;
+    
+    @media(max-width:420px) {
+        padding: 0;
+        background-color: $bgcolor;
+    }
 
     &__container {
+        @media(max-width:420px) {
+            padding: 0;
+        }
     }
+    
     &__columns {
         display: flex;
     }
+    
     &__column {
         &:first-child {
             flex: 0 0 55%;
@@ -14,11 +24,35 @@
             padding: 3rem 2.8rem 2.2rem;
             position: relative;
             z-index: 2;
+            
+            @media(max-width:420px) {
+                padding: 5rem 2.8rem 2.2rem;
+            }
         }
 
         &:last-child {
             flex: 0 0 45%;
             position: relative;
+        }
+
+        @media (max-width: 900px) {
+            &:first-child {
+                flex: 0 0 60%;
+            }
+
+            &:last-child {
+                flex: 0 0 40%;
+            }
+        }
+        
+        @media(max-width:650px){
+            &:first-child {
+                flex: 0 0 100%;
+            }
+
+            &:last-child {
+                flex: 0 0 00%;
+            }
         }
     }
     &__form {
@@ -57,6 +91,12 @@
         &.visible {
             opacity: 1;
             bottom: 0;
+        }
+        
+        @media(max-width:650px){
+            &.visible {
+                opacity: 0;
+            }
         }
     }
 }
@@ -189,6 +229,10 @@
     width: 100%;
     height: 100%;
     position: relative;
+    
+    @media(max-width:650px){
+        opacity: 0;
+    }
 
     &__rectangle {
         position: absolute;
@@ -204,6 +248,11 @@
 
         transform: rotate(-45deg) skew(20deg, 20deg);
         background-color: $yellow;
+
+        @media (max-width: 1000px) {
+            width: 17rem;
+            height: 17rem;
+        }
     }
 
     &.appear {

@@ -256,7 +256,6 @@ class Calculator {
         else
             result = this.calculateCapitalResult()
         
-        console.log(result)
         return result
     }
 

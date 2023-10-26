@@ -34,6 +34,24 @@
 
     &__column {
         flex: 0 0 50%;
+        
+        @media(max-width:860px){
+            &:nth-child(1) {
+                flex: 0 0 40%;
+            }
+            &:nth-child(1) {
+                flex: 0 0 60%;
+            }
+        }
+        
+        @media(max-width:550px){
+            &:nth-child(1) {
+                flex: 0 0 0%;
+            }
+            &:nth-child(1) {
+                flex: 0 0 100%;
+            }
+        }
     }
 
     &__list {
@@ -47,6 +65,10 @@
         position: relative;
         
         @extend %scroll;
+        
+        @media(max-width:550px){
+            margin-left: 5rem;
+        }
     }
     &__number {
         @extend %anek;
@@ -54,7 +76,7 @@
         font-size: 4.4rem;
         left: 0;
         top: 0;
-        transform: translate(calc(-100% - 1rem), 2.6rem);
+        transform: translate(calc(-100% - 1rem), 65%);
     }
     &__title {
         @extend %title3;
@@ -66,5 +88,10 @@
         margin-top: 1.1rem;
         width: 27rem;
         line-height: 1.2em;
+        
+        @media(max-width:860px){
+            width: auto;
+            padding-right: 3rem;
+        }
     }
 }

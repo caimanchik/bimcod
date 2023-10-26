@@ -95,3 +95,47 @@ export function widthToHeightProportion(context = document) {
     
     elements.forEach(e => console.log(e.getBoundingClientRect().width))
 }
+
+export function initBurger(
+    openElement,
+    closeElements,
+    classesElements,
+    stopPropagation
+) {
+    openElement.addEventListener('click', () => {
+        Array.from(classesElements).forEach(e => e.classList.add('opened'))
+        document.querySelector('body').classList.add('lock')
+        // for (let e of classesElements)
+        //     e.classList.add('opened')
+    })
+    
+    // closeElement.addEventListener('click', () => {
+    //     Array.from(classesElements).forEach(e => e.classList.remove('opened'))
+    // })
+    
+    closeElements.forEach(element => {
+        element.addEventListener('click', () => {
+            Array.from(classesElements).forEach(e => e.classList.remove('opened'))
+            document.querySelector('body').classList.remove('lock')
+        })
+    })
+    
+    if (stopPropagation)
+        Array.from(stopPropagation).forEach(el => {
+            el.addEventListener('click', (e) => e.stopPropagation())
+        })
+}
+
+export function blurButtons() {
+    Array.from(document.querySelectorAll('button')).forEach(e => {
+        e.addEventListener('click', () => {
+            e.blur()
+        })
+    })
+    
+    Array.from(document.querySelectorAll('a')).forEach(e => {
+        e.addEventListener('click', () => {
+            e.blur()
+        })
+    })
+}
