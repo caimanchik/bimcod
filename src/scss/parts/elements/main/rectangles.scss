@@ -8,6 +8,11 @@
             top: 0;
             width: 375px;
             height: 375px;
+
+            @media (max-width: 1200px) {
+                width: 350px;
+                height: 350px;
+            }
         }
 
         &_second {
@@ -15,6 +20,11 @@
             bottom: 0;
             width: 1255px;
             height: 1255px;
+
+            @media (max-width: 1350px) {
+                width: 1000px;
+                height: 1000px;
+            }
         }
 
         &.appear {
@@ -38,6 +48,60 @@
                     &:nth-child(4) {
                         transform: translate(72%, -40%) $skew;
                     }
+
+                    @media (max-width: 1200px) {
+                        &:nth-child(1) {
+                            transform: translate(65%, -65%) $skew;
+                        }
+
+                        &:nth-child(2) {
+                            transform: translate(200%, -85%) $skew;
+                        }
+
+                        &:nth-child(3) {
+                            transform: translate(110%, -45%) $skew;
+                        }
+
+                        &:nth-child(4) {
+                            transform: translate(115%, -40%) $skew;
+                        }
+                    }
+
+                    @media (max-width: 650px) {
+                        &:nth-child(1) {
+                            transform: translate(65%, -75%) $skew;
+                        }
+
+                        &:nth-child(2) {
+                            transform: translate(200%, -95%) $skew;
+                        }
+
+                        &:nth-child(3) {
+                            transform: translate(110%, -55%) $skew;
+                        }
+
+                        &:nth-child(4) {
+                            transform: translate(115%, -50%) $skew;
+                        }
+                    }
+
+                    @media (max-width: 550px) {
+                        &:nth-child(1) {
+                            transform: translate(90%, -75%) $skew;
+                        }
+
+                        &:nth-child(2) {
+                            transform: translate(110%, -85%) $skew;
+                        }
+
+                        &:nth-child(3) {
+                            transform: translate(105%, -70%) $skew;
+                        }
+
+                        &:nth-child(4) {
+                            transform: translate(105%, -65%) $skew;
+                        }
+                    }
                 }
 
                 &_second {
@@ -58,6 +122,66 @@
                     &:nth-child(4) {
                         transform: translate(-120%, 48%) $skew;
                     }
+
+                    @media (max-width: 1200px) {
+                        &:nth-child(1) {
+                            transform: translate(-110%, 80%) $skew;
+                        }
+
+                        &:nth-child(2) {
+                            transform: translate(-115%, 69%) $skew;
+                        }
+
+                        &:nth-child(3) {
+                            transform: translate(-125%, 74%) $skew;
+                        }
+
+                        &:nth-child(4) {
+                            transform: translate(-130%, 60%) $skew;
+                        }
+                    }
+
+                    @media (max-width: 860px) {
+                        &:nth-child(1) {
+                            transform: translate(-115%, 80%) $skew;
+                        }
+
+                        &:nth-child(2) {
+                            transform: translate(-120%, 69%) $skew;
+                        }
+
+                        &:nth-child(3) {
+                            transform: translate(-130%, 74%) $skew;
+                        }
+
+                        &:nth-child(4) {
+                            opacity: 0;
+                            transform: translate(-135%, 60%) $skew;
+                        }
+                    }
+
+                    @media (max-width: 650px) {
+                        &:nth-child(1) {
+                            transform: translate(-120%, 80%) $skew;
+                        }
+
+                        &:nth-child(2) {
+                            transform: translate(-125%, 69%) $skew;
+                        }
+
+                        &:nth-child(3) {
+                            transform: translate(-132%, 74%) $skew;
+                        }
+
+                        &:nth-child(4) {
+                            opacity: 0;
+                            transform: translate(-135%, 60%) $skew;
+                        }
+                    }
+
+                    @media (max-width: 550px) {
+                        display: none;
+                    }
                 }
             }
         }
@@ -75,6 +199,11 @@
             height: 375px;
             border: 1px solid white;
             $skew: skew(-35deg, 0);
+
+            @media (max-width: 1200px) {
+                width: 350px;
+                height: 350px;
+            }
 
             &:nth-child(1) {
                 transform: translate(30%, -80%) $skew;
@@ -98,6 +227,11 @@
             height: 1255px;
             border: 1px solid white;
             $skew: skew(-35deg, 0);
+
+            @media (max-width: 1350px) {
+                width: 1000px;
+                height: 1000px;
+            }
 
             &:nth-child(1) {
                 transform: translate(-110%, 80%) $skew;

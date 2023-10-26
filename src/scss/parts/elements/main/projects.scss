@@ -19,6 +19,8 @@
 
 .projects-swiper {
     position: relative;
+    overflow: hidden;
+    padding-bottom: 1rem;
 
     &__wrapper {
     }
@@ -40,7 +42,6 @@
             position: absolute;
             width: auto;
             height: 100%;
-            object-fit: cover;
             left: 50%;
             top: 0;
             transform: translateX(-50%);
@@ -82,18 +83,25 @@
     }
     &__arrow {
         position: absolute;
-        height: 100%;
         flex-grow: 0;
         cursor: pointer;
         bottom: 0;
         left: 1rem;
-        transform: translateY(50%);
+        transform: translateY(-1rem);
         z-index: 2;
 
+        @media (max-width: 410px) {
+            left: 0;
+        }
+
         &_next {
-            transform: translateY(50%) rotate(180deg);
+            transform: translateY(-1rem) rotate(180deg);
             right: 1rem;
             left: auto;
+
+            @media (max-width: 410px) {
+                right: 0;
+            }
         }
 
         & img {

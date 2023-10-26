@@ -44,16 +44,12 @@
   z-index: 3;
 }
 
-.calculate-step__button:hover,
-.calculate__button:hover,
 .calculate-step__button:active,
 .calculate__button:active {
   color: black;
   border-color: transparent;
 }
 
-.calculate-step__button:hover::after,
-.calculate__button:hover::after,
 .calculate-step__button:active::after,
 .calculate__button:active::after {
   width: 101%;
@@ -91,9 +87,9 @@
 
 .appear.services__item {
   opacity: 1 !important;
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
 }
 
 .calculate {
@@ -741,4 +737,19 @@
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.7rem;
+}
+
+@media (hover: hover) {
+  .calculate-step__button:hover,
+  .calculate__button:hover {
+    color: black;
+    border-color: transparent;
+  }
+
+  .calculate-step__button:hover::after,
+  .calculate__button:hover::after {
+    width: 101%;
+    height: 100%;
+    opacity: 1;
+  }
 }

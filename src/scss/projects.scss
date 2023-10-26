@@ -15,6 +15,13 @@
     &__wrapper {
         padding: 0 4rem;
         margin-top: 4.3rem;
+
+        @media (max-width: 1000px) {
+            padding: 0 3rem;
+        }
+        @media (max-width: 700px) {
+            padding: 0;
+        }
     }
     &__projects {
     }
@@ -28,20 +35,28 @@
         @extend %button;
     }
 }
+
 .projects-projects {
     margin: -0.83rem;
     &__project {
         flex: 0 0 33.333%;
         padding: 0.83rem;
+
+        @media (max-width: 660px) {
+            flex: 0 0 50%;
+        }
+        @media (max-width: 470px) {
+            flex: 0 0 100%;
+        }
     }
 
     &__part {
         display: flex;
         flex-wrap: wrap;
-        
+
         position: relative;
     }
-    
+
     &__loader {
         position: absolute;
         width: 2.4rem;
@@ -49,8 +64,8 @@
         left: 50%;
         top: 50px;
         transform: translateX(-50%);
-        transition: all ease .4s;
-        
+        transition: all ease 0.4s;
+
         & img {
             position: absolute;
             width: 100%;
@@ -59,7 +74,7 @@
             left: 0;
             top: 0;
         }
-        
+
         &.hidden {
             opacity: 0;
         }
@@ -80,7 +95,7 @@
         left: 0;
         display: block;
         opacity: 0;
-        transition: all ease .3s;
+        transition: all ease 0.3s;
 
         &::after {
             content: "";
@@ -102,7 +117,7 @@
                 opacity: 1;
             }
         }
-        
+
         &.visible {
             opacity: 1;
         }
@@ -146,5 +161,99 @@
 .rectangles__rectangles {
     &_second {
         transform: translateY(38%);
+        
+        @media(max-width:970px){
+            transform: translateY(40%);
+        }
+        
+        @media(max-width:800px){
+            transform: translateY(41%);
+        }
+    }
+
+    &.appear {
+        .rectangles__rectangle {
+            $skew: skew(-35deg, 0);
+
+            &_second {
+                $skew: skew(-35deg, 0);
+
+                &:nth-child(1) {
+                    transform: translate(-100%, 68%) $skew;
+                }
+
+                &:nth-child(2) {
+                    transform: translate(-105%, 57%) $skew;
+                }
+
+                &:nth-child(3) {
+                    transform: translate(-115%, 62%) $skew;
+                }
+
+                &:nth-child(4) {
+                    transform: translate(-120%, 48%) $skew;
+                }
+
+                @media (max-width: 1200px) {
+                    &:nth-child(1) {
+                        transform: translate(-100%, 68%) $skew;
+                    }
+
+                    &:nth-child(2) {
+                        transform: translate(-105%, 57%) $skew;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translate(-115%, 62%) $skew;
+                    }
+
+                    &:nth-child(4) {
+                        transform: translate(-120%, 48%) $skew;
+                    }
+                }
+
+                @media (max-width: 860px) {
+                    &:nth-child(1) {
+                        transform: translate(-100%, 68%) $skew;
+                    }
+
+                    &:nth-child(2) {
+                        transform: translate(-105%, 57%) $skew;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translate(-115%, 62%) $skew;
+                    }
+
+                    &:nth-child(4) {
+                        opacity: 1;
+                        transform: translate(-120%, 48%) $skew;
+                    }
+                }
+
+                @media (max-width: 650px) {
+                    &:nth-child(1) {
+                        transform: translate(-100%, 68%) $skew;
+                    }
+
+                    &:nth-child(2) {
+                        transform: translate(-105%, 57%) $skew;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translate(-115%, 62%) $skew;
+                    }
+
+                    &:nth-child(4) {
+                        opacity: 1;
+                        transform: translate(-120%, 48%) $skew;
+                    }
+                }
+
+                @media (max-width: 550px) {
+                    display: none;
+                }
+            }
+        }
     }
 }
