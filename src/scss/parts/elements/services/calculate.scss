@@ -3,14 +3,25 @@
     height: 100%;
     padding: 8.9rem 0 0;
 
-    &__container {
+    @media (max-width: 650px) {
+        padding: 0;
     }
-    
+
+    &__container {
+        @media (max-width: 650px) {
+            padding: 0;
+        }
+    }
+
     &__wrapper {
         background-color: $bgcolor;
         padding: 5.5rem 4rem 3.6rem;
         position: relative;
         overflow: hidden;
+
+        @media (max-width: 650px) {
+            padding: 7rem 4rem 15rem;
+        }
 
         & .calculate-step-decor {
             transition: all ease 0.5s;
@@ -97,49 +108,56 @@
             }
         }
     }
-    
+
     &__content {
         transition: all ease 0.3s;
         &.appear {
             opacity: 1 !important;
         }
     }
-    
+
     &__title {
         @extend %title1;
         font-size: 2.2rem;
         max-width: 25rem;
     }
-    
+
     &__subtitle {
         font-size: 1.3rem;
         font-weight: 400;
         max-width: 20rem;
         margin-top: 2.2rem;
     }
-    
+
     &__button-wrap {
         margin-top: 4rem;
+        display: flex;
     }
-    
+
     &__button {
         @extend %button;
         background-color: $yellow;
         border: none;
-        color: $bgcolor;
+        & span {
+            color: $bgcolor;
+        }
 
         &::after {
             background-color: $bgcolor;
             border: 1px solid white;
         }
 
-        &:hover {
-            background-color: $bgcolor;
-            border-color: white;
-            color: white;
+        @media (hover: hover) {
+            &:hover {
+                background-color: $bgcolor;
+                border-color: white;
+                & span {
+                    color: white;
+                }
+            }
         }
     }
-    
+
     &__rectangles {
     }
 }
@@ -150,6 +168,23 @@
     top: 10px;
     transform: translateX(-50%);
     transition: all ease 0.3s;
+
+    @media (max-width: 950px) {
+        right: 0;
+        top: 30px;
+    }
+
+    @media (max-width: 800px) {
+        right: 0;
+        top: 55px;
+    }
+
+    @media (max-width: 650px) {
+        width: 40%;
+        top: auto;
+        right: -100px;
+        bottom: 220px;
+    }
 
     &__rectangle {
         width: 100%;
@@ -163,13 +198,13 @@
 
         transform: rotate(-45deg) skew(20deg, 20deg);
     }
-    
+
     &__coin {
     }
 
     &.appear {
         opacity: 1 !important;
-        
+
         .calculate-decor {
             &__rectangle {
                 &:nth-child(4) {
@@ -184,21 +219,74 @@
                 &:nth-child(1) {
                     top: 240px;
                 }
+
+                @media (max-width: 950px) {
+                    &:nth-child(4) {
+                        top: 0;
+                    }
+                    &:nth-child(3) {
+                        top: 60px;
+                    }
+                    &:nth-child(2) {
+                        top: 120px;
+                    }
+                    &:nth-child(1) {
+                        top: 180px;
+                    }
+                }
+
+                // @media (max-width: 830px) {
+                //     &:nth-child(4) {
+                //         top: 0;
+                //     }
+                //     &:nth-child(3) {
+                //         top: 45px;
+                //     }
+                //     &:nth-child(2) {
+                //         top: 90px;
+                //     }
+                //     &:nth-child(1) {
+                //         top: 135px;
+                //     }
+                // }
             }
         }
 
         .calculate-decor-coin {
             &__coin {
                 animation: coin 1s cubic-bezier(0.32, -2.54, 0.66, 0.55) 0.3s;
+
                 top: 0;
                 left: 0;
                 width: 70px;
                 height: 70px;
                 background: $yellow;
+
+                @media (max-width: ($mw + 70px)) {
+                    top: -25px;
+                    animation: coin1 1s cubic-bezier(0.32, -3, 0.66, 0.55) 0.3s;
+                }
+
+                @media (max-width: 860px) {
+                    top: -45px;
+                    animation: coin2 1s cubic-bezier(0.32, -3, 0.66, 0.55) 0.3s;
+                }
+
+                @media (max-width: 650px) {
+                    top: -25px;
+                    animation: coin3 1.4s linear;
+                    transition:
+                        left ease 1s,
+                        width ease 0.7s,
+                        height ease 0.7s,
+                        background ease 1s;
+                    transition-delay: 0.3s;
+                }
             }
         }
     }
 }
+
 .calculate-decor-coin {
     position: absolute;
     left: 50%;
@@ -224,7 +312,7 @@
         border: 1px solid $yellow;
         background: $bgcolor;
     }
-    
+
     &__pocket {
         position: absolute;
         width: 100px;
@@ -233,6 +321,21 @@
         background-color: $bgcolor;
         transform: translateX(-50%);
         border-top: 1px solid white;
+
+        @media (max-width: ($mw + 70px)) {
+            height: 50px;
+            top: 30px;
+        }
+
+        @media (max-width: 860px) {
+            top: 10px;
+            height: 20px;
+        }
+
+        @media (max-width: 650px) {
+            top: 20px;
+            height: 40px;
+        }
     }
 }
 
@@ -243,6 +346,48 @@
 
     to {
         top: 0;
+    }
+}
+
+@keyframes coin1 {
+    from {
+        top: -35px;
+    }
+
+    to {
+        top: -25px;
+    }
+}
+
+@keyframes coin2 {
+    from {
+        top: -55px;
+    }
+
+    to {
+        top: -45px;
+    }
+}
+
+@keyframes coin3 {
+    0% {
+        top: -260px;
+    }
+
+    // 20% {
+    //     top: -200px;
+    // }
+
+    30% {
+        top: -240px;
+    }
+
+    // 60% {
+    //     top: -200px;
+    // }
+
+    100% {
+        top: -25px;
     }
 }
 
@@ -261,10 +406,10 @@
     padding: 4.5rem 4rem 1.5rem;
 
     position: relative;
-    transition: all ease .5s;
-    
+    transition: all ease 0.5s;
+
     opacity: 0;
-    
+
     &.show {
         opacity: 1;
     }
@@ -287,6 +432,13 @@
     &__inputs {
         margin-top: 2.8rem;
         flex-grow: 1;
+    }
+    &__consult {
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin-top: 0.5rem;
+        max-width: 20rem;
+        line-height: 1.3em;
     }
     &__input {
     }
@@ -345,7 +497,7 @@
         pointer-events: none;
 
         transform: translateY(50%);
-        
+
         font-family: $anek;
     }
 
@@ -458,13 +610,13 @@
 .calculate-result {
     padding: 2.3rem 1.8rem 3rem 3.3rem;
     position: relative;
-    transition: all ease .5s;
-    
+    transition: all ease 0.5s;
+
     opacity: 0;
-    
+
     &.show {
         opacity: 1;
-        
+
         .calculate-result__result-wrap {
             &::after {
                 width: 100%;
@@ -480,14 +632,14 @@
         font-family: $anek;
         margin-top: 1rem;
     }
-    
+
     &__content {
         margin-top: 8rem;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
     }
-    
+
     &__result-wrap {
         display: flex;
         // background-color: $yellow;
@@ -495,9 +647,9 @@
         padding: 0.8rem 1rem;
         font-size: 4.4rem;
         position: relative;
-        
+
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             left: 0px;
             top: 0px;
@@ -506,33 +658,81 @@
             transition: all ease 1s;
             background-color: $yellow;
         }
-        
+
         & span {
             position: relative;
             z-index: 2;
         }
     }
-    
+
     &__result {
         margin-right: 0.7rem;
         position: relative;
         z-index: 2;
     }
-    
+
     &__description {
         margin-left: 2.3rem;
         padding-bottom: 0.333rem;
         font-size: 0.95rem;
         line-height: 1.1em;
-        
+
         &.outoflist {
             position: relative;
-            
+
             &::before {
-                content: '*';
+                content: "*";
                 position: absolute;
                 left: -10px;
                 top: 0px;
+            }
+        }
+    }
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    &.calculator {
+        @media (max-width: 900px) {
+            .calculate {
+                flex-grow: 1;
+                height: 100%;
+                display: flex;
+                &__container {
+                    flex-grow: 1;
+                    display: flex;
+                }
+
+                &__wrapper {
+                    flex-grow: 1;
+                    display: flex;
+                }
+
+                &__content-wrapper {
+                    flex-grow: 1;
+                    display: flex;
+                }
+                &__step {
+                    flex-grow: 1;
+                }
+            }
+
+            .calculate-step {
+                &__inputs {
+                    flex-grow: 0;
+                }
+                &__button-wrap {
+                    display: flex;
+                    justify-content: flex-start;
+                    margin-top: 60px;
+                    margin-bottom: 160px;
+                }
+                &__step {
+                    position: absolute;
+                    left: 35px;
+                }
             }
         }
     }

@@ -54,7 +54,7 @@ function initPart() {
     
     return {part, projects, loader: loaderWrapper}
 }
-
+swiperWrapperElement.append(slide.value)
 function initLink(params) {
     const link = document.createElement('a')
     link.href = params.link
