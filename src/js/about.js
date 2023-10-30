@@ -6,7 +6,7 @@ import 'swiper/css';
 
 const newsSwiper = new Swiper(".about-swiper", {
     simulateTouch: false,
-    slidesPerView: 4,
+    slidesPerView: 1.5,
     modules: [
         Navigation
     ],
@@ -16,6 +16,19 @@ const newsSwiper = new Swiper(".about-swiper", {
     },
     updateOnWindowResize: true,
     rewind: true,
-    spaceBetween: 15,
-    preventClicks: true
+    preventClicks: true,
+    breakpoints: {
+        320: {
+            slidesPerView: 1.5
+        },
+        600: {
+            slidesPerView: 2.2
+        },
+        900: {
+            slidesPerView: 3.6
+        },
+        1100: {
+            slidesPerView: 4
+        },
+    }
 })

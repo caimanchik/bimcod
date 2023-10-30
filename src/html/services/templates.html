@@ -56,8 +56,8 @@
                 <div id="result-container" class="calculate-result__result"></div><span>₽</span>
             </div>
             <div class="calculate-result__description" id="result-description">
-                Данная информация является справочной и не является публичной офертой. Окончательный расчет стоимости
-                после обследования объекта.
+                <div class="calculate-result__info_first">Данная информация является справочной и не является публичной офертой.</div>
+                <div class="calculate-result__info">Окончательный расчет стоимости после обследования объекта.</div>
             </div>
         </div>
     </div>
@@ -87,5 +87,25 @@
 <template id="loader-temp">
     <div class="loader__wrap">
         <img src="@img/icons/loader.svg" alt="">
+    </div>
+</template>
+
+<template id="result-consult">
+    <div class="calculate__step calculate-step">
+        <div class="calculate-step__wrapper">
+            <h2 id="step-title" class="calculate-step__title consult">
+                Ваш раздел отсутствует в списке?
+            </h2>
+    
+            <div class="calculate-step__consult">
+                Оставьте заявку на получение персональной консультации
+            </div>
+            
+            <div class="calculate__button-wrap">
+                <a href="request.html" type="button" class="calculate__button">
+                    <span>Оставить заявку</span>
+                </a>
+            </div>
+        </div>
     </div>
 </template>

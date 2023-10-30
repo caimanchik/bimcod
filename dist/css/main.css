@@ -873,6 +873,11 @@
   bottom: 0;
 }
 
+.form-form.hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
 .form-form__field {
   margin-top: 1.7rem;
   position: relative;
@@ -1016,6 +1021,34 @@
 .form-form__politics a:active::after,
 .form-form__politics a:focus::after {
   width: 100%;
+}
+
+.form-form__loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.form-form__loader img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 0;
+  top: 0;
+}
+
+.form-form__loader.visible {
+  opacity: 1 !important;
 }
 
 .form-rectangles {

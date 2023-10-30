@@ -62,7 +62,8 @@ async function initProjectSwiper() {
         updateOnWindowResize: true,
         loop: true,
         autoplay: {
-            delay: 5000
+            delay: 5000,
+            disableOnInteraction: false
         }
     })
 }
@@ -101,12 +102,8 @@ async function initNewsSlider() {
                 .map(e => e.getBoundingClientRect().height)
                 .reduce((prev, now) => Math.max(prev, now), 0);
 
-            // console.log(Array.from(document.querySelectorAll('.news-swiper-slide')))
-
             document.querySelector('.news-swiper__wrapper').style.height = max + 'px';
     })
-    
-    // console.log(newsResponses.map(e => e.))
 }
 
 
@@ -122,7 +119,6 @@ const newsSwiper = new Swiper(".news-swiper", {
     },
     updateOnWindowResize: true,
     rewind: true,
-    // spaceBetween: 30,
     preventClicks: true,
     breakpoints: {
         1100: {

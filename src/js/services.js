@@ -42,6 +42,7 @@ class Calculator {
         document.querySelector('.main').append(this.savedServices)
 
         this.wrapperElement.classList.remove('calculator')
+        document.querySelector('.main').classList.remove('calculator')
 
         initScrollAppear()
 
@@ -64,9 +65,11 @@ class Calculator {
 
             servicesElement.remove()
             this.wrapperElement.classList.add('calculator')
+            document.querySelector('.main').classList.add('calculator')
 
             this.nextStep()
         })
+        
     }
 
     initStep(stepDescription) {
@@ -229,7 +232,12 @@ class Calculator {
 
     initResultStep() {
         const [result, isOutOfList] = this.calculateResult()
-        // const result = 13428000.11
+        
+        if (result === 0 && isOutOfList) {
+            this.initConsultResult()
+            return
+        }
+        
         const resultTemplate = document.querySelector('#result-calculator');
         const template = resultTemplate.content.firstElementChild.cloneNode(true)
 
@@ -242,9 +250,20 @@ class Calculator {
         
         if (isOutOfList)
         {
-            this.calculateContent.querySelector('#result-description').textContent = 'Сумма определена без учета пунктов, которых не было в списке, для получения более полной информации заполните анкету. Данная информация является справочной и не является публичной офертой. Окончательный расчет стоимости после обследования объекта.'
+            this.calculateContent.querySelector('#result-description').innerHTML = '<div class="calculate-result__info">Сумма определена без учета пунктов, которых не было в списке, для получения более полной информации заполните анкету.</div><div class="calculate-result__info calculate-result__info_first">Данная информация является справочной и не является публичной офертой.</div> <div class="calculate-result__info">Окончательный расчет стоимости после обследования объекта.</div>'
             this.calculateContent.querySelector('#result-description').classList.add('outoflist')
+            this.calculateContent.querySelector('.calculate-result__title').classList.add('outoflist')
         }
+        
+        setTimeout(() => template.classList.add('show'), 0);
+    }
+    
+    initConsultResult() {
+        const template = document.querySelector('#result-consult').content.firstElementChild.cloneNode(true);
+        
+        this.wrapperElement.classList.add('result')
+        this.calculateContent.innerHTML = ''
+        this.calculateContent.append(template)
         
         setTimeout(() => template.classList.add('show'), 0);
     }

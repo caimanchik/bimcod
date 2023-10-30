@@ -1,5 +1,5 @@
 import { Swiper } from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { getRequest, BACKEND_HOST } from './modules/requests.js';
 
 import 'swiper/css';
@@ -11,8 +11,6 @@ async function initProject() {
     const params = new URLSearchParams(window.location.search)
     const projectData = await getProjectById(params.get('id'))
     insertProject(projectData)
-
-    document.querySelector('#project-wrapper').classList.add('visible')
 }
 
 function insertProject(projectData) {
@@ -21,24 +19,27 @@ function insertProject(projectData) {
 
     nameElement.textContent = projectData.name
     descriptionElement.textContent = projectData.description
-
-    hideLoader()
-    initSlider(projectData.images)
+    
+    insertSlides(projectData.images)
+        .then(() => {
+            hideLoader()
+            initSlider()
+            document.querySelector('#project-wrapper').classList.add('visible')
+        })
 }
 
 function hideLoader() {
     document.querySelector('#project-loader').classList.add('hidden')
 }
 
-function initSlider(slidesData) {
-    insertSlides(slidesData)
-
+function initSlider() {
     const projectSwiper = new Swiper(".project-swiper", {
         simulateTouch: false,
         slidesPerView: 1,
         modules: [
             Navigation,
-            Pagination
+            Pagination,
+            Autoplay
         ],
         navigation: {
             nextEl: '.project-swiper__arrow_next',
@@ -52,25 +53,38 @@ function initSlider(slidesData) {
         },
         updateOnWindowResize: true,
         loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        }
     })
 }
 
-function insertSlides(slidesData) {
+async function insertSlides(slidesData) {
     const swiperWrapperElement = document.querySelector('#project-swiper-wrapper')
     const slideTemplate = document.querySelector('#slide-template')
     swiperWrapperElement.innerHTML = ''
+    
+    const imageProms = []
 
     slidesData.forEach(slideData => {
-        swiperWrapperElement.append(initSlide(slideTemplate, slideData))
+        const slide = slideTemplate.content.cloneNode(true)
+        
+        const image = document.createElement('img')
+        
+        image.src = slideData.url
+        image.alt = slideData.alt
+        
+        slide.querySelector('.project-swiper-slide__image').append(image)
+        
+        swiperWrapperElement.append(slide)
+        
+        imageProms.push(new Promise(resolve => {
+            image.onload = () => resolve()
+        }))
     })
-}
-
-function initSlide(slideTemplate, slideData) {
-    const slide = slideTemplate.content.cloneNode(true)
-    slide.querySelector('img').src = slideData.url
-    slide.querySelector('img').alt = slideData.alt
-
-    return slide
+    
+    return Promise.all(imageProms)
 }
 
 async function getProjectById(id) {
