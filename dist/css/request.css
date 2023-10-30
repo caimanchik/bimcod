@@ -211,6 +211,7 @@
   transition: all ease 0.3s;
   font-size: 0.9rem;
   font-weight: 500;
+  border-radius: 0%;
 }
 .form-form__input::-webkit-input-placeholder {
   color: #787878;

@@ -632,6 +632,9 @@
     margin-bottom: 10rem;
   }
 }
+.calculate-step__input {
+  border-radius: 0%;
+}
 .calculate-step__input-text {
   position: relative;
   display: block;
