@@ -76,15 +76,22 @@ export class ConsultForm {
             if (errorsSet.size > 0) {
                 this.showError(errorsSet, wrongFileds)
             } else {
+                document.querySelector('.form-form__loader').classList.add('visible')
+                document.querySelector('.form-form').classList.add('hidden')
+                
                 this.sendRequest(formValues)
+                    .then(() => {
+                        document.querySelector('.form-form__loader').classList.remove('visible')
+                        document.querySelector('.form-form').classList.remove('hidden')
+                    })
             }
         });
 
         this.fields.forEach(field => field.addEventListener('click', () => field.classList.remove('wrong')))
     }
     
-    sendRequest(data) {
-        postRequest(`${BACKEND_HOST}/sendUserResponse`, data)
+    async sendRequest(data) {
+        return postRequest(`${BACKEND_HOST}/sendUserResponse`, data)
     }
 
     formatPhone(field) {

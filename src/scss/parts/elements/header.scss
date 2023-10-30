@@ -33,6 +33,14 @@
             &.opened {
                 background: rgba(90, 90, 90, 0.5);
                 pointer-events: all;
+
+                & .header__container {
+                    pointer-events: none;
+                }
+
+                & .header__column {
+                    pointer-events: all;
+                }
             }
         }
     }
@@ -62,8 +70,8 @@
             box-shadow: 0px 2px 8px 0px rgba(167, 167, 167, 0.1);
             background: rgba(33, 33, 33, 0.8);
         }
-        
-        @media(max-width: 860px){
+
+        @media (max-width: 860px) {
             padding: 0 25px;
         }
     }
@@ -133,13 +141,25 @@
 
         @media (hover: hover) {
             &:hover {
-                color: white;
+                & span {
+                    color: white;
+                }
+
+                @media (max-width: 670px) {
+                    & span {
+                        color: $bgcolor;
+                    }
+                }
                 &:visited {
                     color: white;
                 }
 
                 &::after {
                     background-color: $bgcolor;
+
+                    @media (max-width: 670px) {
+                        background-color: $yellow;
+                    }
                 }
             }
         }
@@ -349,7 +369,9 @@
 
             @media (hover: hover) {
                 &:hover {
-                    color: white;
+                    & span {
+                        color: $bgcolor;
+                    }
 
                     &::after {
                         background-color: $yellow;

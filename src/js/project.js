@@ -1,5 +1,5 @@
 import { Swiper } from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { getRequest, BACKEND_HOST } from './modules/requests.js';
 
 import 'swiper/css';
@@ -38,7 +38,8 @@ function initSlider() {
         slidesPerView: 1,
         modules: [
             Navigation,
-            Pagination
+            Pagination,
+            Autoplay
         ],
         navigation: {
             nextEl: '.project-swiper__arrow_next',
@@ -52,6 +53,10 @@ function initSlider() {
         },
         updateOnWindowResize: true,
         loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        }
     })
 }
 
@@ -81,14 +86,6 @@ async function insertSlides(slidesData) {
     
     return Promise.all(imageProms)
 }
-
-// function initSlide(slideTemplate, slideData) {
-//     const slide = slideTemplate.content.cloneNode(true)
-//     slide.querySelector('img').src = slideData.url
-//     slide.querySelector('img').alt = slideData.alt
-
-//     return slide
-// }
 
 async function getProjectById(id) {
     if (id === null) {
