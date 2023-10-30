@@ -250,8 +250,9 @@ class Calculator {
         
         if (isOutOfList)
         {
-            this.calculateContent.querySelector('#result-description').textContent = 'Сумма определена без учета пунктов, которых не было в списке, для получения более полной информации заполните анкету. Данная информация является справочной и не является публичной офертой. Окончательный расчет стоимости после обследования объекта.'
+            this.calculateContent.querySelector('#result-description').innerHTML = '<div class="calculate-result__info">Сумма определена без учета пунктов, которых не было в списке, для получения более полной информации заполните анкету.</div><div class="calculate-result__info calculate-result__info_first">Данная информация является справочной и не является публичной офертой.</div> <div class="calculate-result__info">Окончательный расчет стоимости после обследования объекта.</div>'
             this.calculateContent.querySelector('#result-description').classList.add('outoflist')
+            this.calculateContent.querySelector('.calculate-result__title').classList.add('outoflist')
         }
         
         setTimeout(() => template.classList.add('show'), 0);
