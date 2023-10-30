@@ -143,3 +143,5 @@ document.querySelector('#leave-request').addEventListener('click', (e) => {
     scrollTo(document.querySelector('.form'), e);
     document.querySelector('.header__wrapper').click();
 });
+
+document.querySelector("video").play()
