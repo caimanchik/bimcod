@@ -1,5 +1,5 @@
-export const BACKEND_HOST = 'http://127.0.0.1:8000/api/v1'
-// export const BACKEND_HOST = 'https://bimcod.pythonanywhere.com/api/v1'
+// export const BACKEND_HOST = 'http://127.0.0.1:8000/api/v1'
+export const BACKEND_HOST = 'https://bimcod.pythonanywhere.com/api/v1'
 
 export function getRequest(url, serializer) {
     return fetch(url, {
