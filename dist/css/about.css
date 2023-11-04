@@ -551,6 +551,7 @@
   -webkit-transition: all ease 0.4s;
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s;
+  pointer-events: none;
 }
 .about-swiper__arrow img:last-child {
   opacity: 0;

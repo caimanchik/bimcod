@@ -507,16 +507,31 @@ body.lock {
   transition: all ease 0.3s;
   color: #212121;
 }
+@media (max-width: 960px) {
+  .header-logos__text {
+    -webkit-transform: translateY(4px);
+        -ms-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+}
 @media (max-width: 860px) {
   .header-logos__text {
     font-size: 1rem;
     position: relative;
+    -webkit-transform: translateY(2px);
+        -ms-transform: translateY(2px);
+            transform: translateY(2px);
   }
 }
 @media (max-width: 670px) {
   .header-logos__text {
     color: white;
     padding-left: 0.9rem;
+    -webkit-transform: translateY(4px);
+        -ms-transform: translateY(4px);
+            transform: translateY(4px);
+    letter-spacing: 0.3em;
+    font-size: 1.4rem;
   }
 }
 .header-logos:hover .header-logos__text {

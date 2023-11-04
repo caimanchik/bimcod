@@ -74,6 +74,7 @@ class Calculator {
 
     initStep(stepDescription) {
         this.calculateContent.innerHTML = ''
+        this.scrollTop()
 
         const template = this.stepTemplate.cloneNode(true)
         this.calculateContent.append(template)
@@ -218,6 +219,10 @@ class Calculator {
             submitButton.blur()
         })
     }
+    
+    scrollTop() {
+        window.scrollTo(0, 0)
+    }
 
     nextStep() {
         this.step++;
@@ -242,6 +247,7 @@ class Calculator {
         const template = resultTemplate.content.firstElementChild.cloneNode(true)
 
         this.calculateContent.innerHTML = ''
+        this.scrollTop()
         this.calculateContent.append(template)
         this.wrapperElement.classList.add('result')
 

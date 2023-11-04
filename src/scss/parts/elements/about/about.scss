@@ -133,6 +133,7 @@
             left: 0;
             top: 0;
             transition: all ease 0.4s;
+            pointer-events: none;
 
             &:last-child {
                 opacity: 0;

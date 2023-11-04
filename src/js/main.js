@@ -144,4 +144,10 @@ document.querySelector('#leave-request').addEventListener('click', (e) => {
     document.querySelector('.header__wrapper').click();
 });
 
-document.querySelector("video").play()
+// window.onload = () => 
+// document.querySelector('body').addEventListener('click touchstart', () => {
+//     const video = document.querySelector("video")
+    
+//     video.onload = () => video.play()
+// })
+

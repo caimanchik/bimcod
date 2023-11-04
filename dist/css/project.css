@@ -418,6 +418,7 @@
   -webkit-transition: all ease 0.3s;
   -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
+  pointer-events: none;
 }
 .project-swiper__arrow img:last-child {
   opacity: 0;
