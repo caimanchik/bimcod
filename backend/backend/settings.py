@@ -41,11 +41,12 @@ SECRET_KEY = "django-insecure-p6o2)j9nk_-ch_%!k(ul&xdm-d@g*6$_y4+(7xpk3zk%#+by_-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# PRODUCTION_HOST = 'localhost'
-PRODUCTION_HOST = 'api.bimcod.ru'
+PRODUCTION_HOST = 'localhost'
+# PRODUCTION_HOST = 'api.bimcod.ru'
 
 ALLOWED_HOSTS = [
     PRODUCTION_HOST,
+    "127.0.0.1"
 ]
 
 ROOT_HOSTCONF = 'backend.hosts'
@@ -164,6 +165,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 JSON_EDITOR_JS = 'https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.10.3/jsoneditor.min.js'
 JSON_EDITOR_CSS = 'https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.10.3/jsoneditor.min.css'
 
-# NOW_HOST = "http://" + PRODUCTION_HOST + ":8000"
+NOW_HOST = "http://" + PRODUCTION_HOST + ":8000"
 # NOW_HOST = "https://bimcod.pythonanywhere.com"
-NOW_HOST = "https://api.bimcod.ru"
+# NOW_HOST = "https://api.bimcod.ru"

@@ -7,9 +7,16 @@ from bimcod.json_init.linear_project import linear_project
 from bimcod.json_init.linear_project_work import linear_project_work
 from bimcod.json_init.linear_work import linear_work
 
+import xml.etree.ElementTree as ET
+from datetime import datetime
+
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
+
 
 def get_upload_path_project_image(instance, filename):
     return f'projects/{instance.project.id}/{filename}'
+
 
 def get_upload_path_project_preview(instance, filename):
     return f'projects/{instance.id}/preview/{filename}'
@@ -26,6 +33,31 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+
+@receiver(post_save, sender=Project)
+@receiver(post_delete,sender=Project)
+def generate_xml(sender, **kwargs):
+    ET.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
+    f = ET.parse('/var/www/u1814431/data/www/api.bimcod.ru/static/sitemap.xml')
+    et = f.getroot()
+
+    for id in map(lambda x: x.id, Project.objects.all()):
+        url = ET.SubElement(et, 'url')
+
+        loc = ET.SubElement(url, 'loc')
+        loc.text = f"https://bimcod.ru/project.html?id={id}"
+
+        lastmod = ET.SubElement(url, 'lastmod')
+        lastmod.text = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S") + '+05:00'
+
+        changefreq = ET.SubElement(url, 'changefreq')
+        changefreq.text = "weekly"
+
+        priority = ET.SubElement(url, 'priority')
+        priority.text = "0.8"
+
+    ET.ElementTree(et).write('/var/www/u1814431/data/www/bimcod.ru/sitemap.xml', encoding='utf-8', xml_declaration=True)
 
 
 class ImageProject(models.Model):
