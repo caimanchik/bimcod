@@ -35,31 +35,6 @@ class Project(models.Model):
         return self.title
 
 
-@receiver(post_save, sender=Project)
-@receiver(post_delete,sender=Project)
-def generate_xml(sender, **kwargs):
-    ET.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
-    f = ET.parse('/var/www/u1814431/data/www/api.bimcod.ru/static/sitemap.xml')
-    et = f.getroot()
-
-    for id in map(lambda x: x.id, Project.objects.all()):
-        url = ET.SubElement(et, 'url')
-
-        loc = ET.SubElement(url, 'loc')
-        loc.text = f"https://bimcod.ru/project.html?id={id}"
-
-        lastmod = ET.SubElement(url, 'lastmod')
-        lastmod.text = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S") + '+05:00'
-
-        changefreq = ET.SubElement(url, 'changefreq')
-        changefreq.text = "weekly"
-
-        priority = ET.SubElement(url, 'priority')
-        priority.text = "0.8"
-
-    ET.ElementTree(et).write('/var/www/u1814431/data/www/bimcod.ru/sitemap.xml', encoding='utf-8', xml_declaration=True)
-
-
 class ImageProject(models.Model):
     class Meta:
         verbose_name_plural = 'Фотографии проектов'
@@ -171,3 +146,44 @@ class AboutSection(models.Model):
 
     def __str__(self):
         return f'Карточка №{self.order}'
+
+
+@receiver(post_save, sender=Project)
+@receiver(post_delete, sender=Project)
+@receiver(post_save, sender=AboutSection)
+@receiver(post_delete, sender=AboutSection)
+def generate_xml(sender, **kwargs):
+    ET.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
+    f = ET.parse('/var/www/u1814431/data/www/api.bimcod.ru/static/sitemap.xml')
+    et = f.getroot()
+
+    for id in map(lambda x: x.id, Project.objects.all()):
+        url = ET.SubElement(et, 'url')
+
+        loc = ET.SubElement(url, 'loc')
+        loc.text = f"https://bimcod.ru/project.html?id={id}"
+
+        lastmod = ET.SubElement(url, 'lastmod')
+        lastmod.text = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S") + '+05:00'
+
+        changefreq = ET.SubElement(url, 'changefreq')
+        changefreq.text = "weekly"
+
+        priority = ET.SubElement(url, 'priority')
+        priority.text = "0.8"
+
+    url = ET.SubElement(et, 'url')
+
+    loc = ET.SubElement(url, 'loc')
+    loc.text = f"https://bimcod.ru/about.html"
+
+    lastmod = ET.SubElement(url, 'lastmod')
+    lastmod.text = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S") + '+05:00'
+
+    changefreq = ET.SubElement(url, 'changefreq')
+    changefreq.text = "weekly"
+
+    priority = ET.SubElement(url, 'priority')
+    priority.text = "1.0"
+
+    ET.ElementTree(et).write('/var/www/u1814431/data/www/bimcod.ru/sitemap.xml', encoding='utf-8', xml_declaration=True)
