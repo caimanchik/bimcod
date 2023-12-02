@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from bimcod.models import Project, NewsObject, ImageProject, LinearProject, LinearWork, LinearProjectWork, CapitalType, \
-    CapitalProject, CapitalWork, CapitalProjectWork
+    CapitalProject, CapitalWork, CapitalProjectWork, AboutSection
 from jsoneditor.forms import JSONEditor
 from django.db.models.fields.json import JSONField
 
@@ -18,6 +18,7 @@ admin.site.register(Project)
 admin.site.register(NewsObject)
 admin.site.register(ImageProject)
 admin.site.register(CapitalType)
+admin.site.register(AboutSection)
 
 admin.site.register(LinearProject, JSONAdmin)
 admin.site.register(LinearWork, JSONAdmin)

@@ -159,3 +159,15 @@ class CapitalProjectWork(models.Model):
 
     def __str__(self):
         return 'Объект капитального строительства/Проектная и рабочая документация'
+
+
+class AboutSection(models.Model):
+    class Meta:
+        verbose_name_plural = 'Карточки на странице "О нас"'
+
+    text = models.TextField(verbose_name='Текст карточки. Выделенный текст вставить в формате <span class="highlight"><span>Выделенный текст</span></span>')
+    order = models.IntegerField(verbose_name='Номер карточки на странице')
+    image = models.ImageField(verbose_name='Фотография в карточке. Предпочтительное соотношение сторон 1 к 1')
+
+    def __str__(self):
+        return f'Карточка №{self.order}'

@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from backend.settings import NOW_HOST
 from bimcod.json_init.calculator_get import calculator
 from bimcod.models import NewsObject, Project, CapitalType, LinearProject, LinearProjectWork, LinearWork, \
-    CapitalProject, CapitalWork, CapitalProjectWork
+    CapitalProject, CapitalWork, CapitalProjectWork, AboutSection
 
 from django.core.mail import send_mail
 from django.conf import settings
@@ -150,3 +150,14 @@ class SendUserResponse(APIView):
         )
 
         return Response()
+
+
+class GetAboutInfo(APIView):
+    @staticmethod
+    def get(request):
+        result = [{
+            "text": x.text,
+            "imageUrl": NOW_HOST + x.image.url
+        } for x in AboutSection.objects.order_by("order")]
+
+        return Response(result)
